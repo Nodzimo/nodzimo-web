@@ -1,0 +1,43 @@
+# Workaround для деплоя Bun-проекта через Coolify/Nixpacks.
+# Nixpacks может поставить обычный Bun Linux x64 binary,
+# который требует AVX2 и падает с exit code 132 / Illegal instruction на build-контейнере без AVX2.
+#
+# Фикс:
+# 1. Используется nixpkgsArchive с поддержкой Bun 1.2+ и нового bun.lock
+# 2. Вместо Bun из Nixpacks явно скачивается Bun Linux x64 Baseline binary
+# 3. Bun кладётся в /app/.bun, чтобы не пропадать между фазами Nixpacks
+# 4. install/build/start запускаются через /app/.bun/bin/bun
+
+[variables]
+BUN_VERSION = '1.3.10'
+NODE_ENV = 'production'
+NEXT_TELEMETRY_DISABLED = '1'
+
+[phases.setup]
+nixpkgsArchive = 'f69ae4816bc1b501460ad2c0c63ed0cc4a9b876e'
+aptPkgs = ['curl', 'unzip']
+
+[phases.install]
+cmds = [
+    'echo "[Nixpacks] CPU compatibility flags:"',
+    'grep -m1 -o "avx2\\|avx\\|sse4_2" /proc/cpuinfo || true',
+    'echo "[Nixpacks] Installing Bun ${BUN_VERSION} baseline to /app/.bun..."',
+    'mkdir -p /app/.bun/bin',
+    'curl -fsSL "https://github.com/oven-sh/bun/releases/download/bun-v${BUN_VERSION}/bun-linux-x64-baseline.zip" -o /tmp/bun.zip',
+    'unzip -o /tmp/bun.zip -d /tmp',
+    'cp /tmp/bun-linux-x64-baseline/bun /app/.bun/bin/bun',
+    'chmod +x /app/.bun/bin/bun',
+    'echo "[Nixpacks] Bun version:"',
+    '/app/.bun/bin/bun --version',
+    'echo "[Nixpacks] Installing dependencies..."',
+    '/app/.bun/bin/bun install --frozen-lockfile'
+]
+
+[phases.build]
+cmds = [
+    'echo "[Nixpacks] Building Next.js..."',
+    '/app/.bun/bin/bun run build'
+]
+
+[start]
+cmd = '/app/.bun/bin/bun run start'
