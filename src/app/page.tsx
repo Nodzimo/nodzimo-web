@@ -1,6 +1,7 @@
 export default function Home() {
   return (
     <div>
+      <h1 className={'mb-2 font-black text-2xl'}>Hello, World!</h1>
       <p>It begins very small</p>
       <p>seems like nothing much at all</p>
       <p>Just a germ, just a speck, just a grain</p>
