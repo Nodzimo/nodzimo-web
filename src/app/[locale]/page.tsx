@@ -1,7 +1,11 @@
-export default function Home() {
+import { useTranslations } from 'next-intl'
+
+export default function HomePage() {
+  const t = useTranslations('HomePage')
+
   return (
     <div>
-      <h1 className={'mb-2 font-black text-2xl'}>Hello, World!</h1>
+      <h1 className={'mb-2 font-black text-2xl'}>{t('title')}</h1>
       <p>It begins very small</p>
       <p>seems like nothing much at all</p>
       <p>Just a germ, just a speck, just a grain</p>
