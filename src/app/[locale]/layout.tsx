@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google'
 import '../globals.css'
 import { notFound } from 'next/navigation'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
@@ -8,14 +8,15 @@ import type { ReactNode } from 'react'
 import LocaleSwitcher from '@/components/locale-switcher'
 import { routing } from '@/i18n/routing'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+const ibmPlexSans = IBM_Plex_Sans({
+  variable: '--app-font-sans',
+  subsets: ['latin', 'cyrillic'],
 })
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: '--app-font-mono',
+  subsets: ['latin', 'cyrillic'],
+  weight: ['400', '500', '600', '700'],
 })
 
 type Params = {
@@ -48,7 +49,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
-      className={`${geistSans.variable} ${geistMono.variable} h-full bg-fuchsia-500 antialiased`}
+      className={`${ibmPlexSans.variable} ${ibmPlexMono.variable} h-full bg-fuchsia-500 antialiased`}
     >
       <body className={'flex min-h-full flex-col bg-lime-500'}>
         <NextIntlClientProvider>
