@@ -1,7 +1,10 @@
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 export default function IndexPage() {
   const t = useTranslations('IndexPage')
+  const locale = useLocale()
+  const { region } = new Intl.Locale(locale)
+  console.debug(`[SN] Locale: ${locale}, Region: ${region}`)
 
   return (
     <div>

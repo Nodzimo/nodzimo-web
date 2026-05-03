@@ -10,5 +10,9 @@
   "IndexPage": {
     "title": "Hello, World!",
     "description": "It begins very small,\nSeems like nothing much at all,\nJust a germ, just a speck, just a grain.\n\nBut the seed has been sown,\nAnd before you know it's grown."
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, ru {Russian} en {English} other {Unknown}}"
   }
 }

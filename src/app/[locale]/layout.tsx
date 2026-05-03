@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 import type { ReactNode } from 'react'
+import LocaleSwitcher from '@/components/locale-switcher'
 import { routing } from '@/i18n/routing'
 
 const geistSans = Geist({
@@ -51,8 +52,13 @@ export default async function LocaleLayout({ children, params }: Props) {
     >
       <body className={'flex min-h-full flex-col bg-lime-500'}>
         <NextIntlClientProvider>
-          <header className={'bg-sky-100 p-2 text-center'}>
+          <header
+            className={
+              'flex flex-wrap items-center justify-between gap-2 bg-sky-100 p-2'
+            }
+          >
             {t('header')}
+            <LocaleSwitcher />
           </header>
           <main
             className={'flex grow items-center justify-center bg-amber-100 p-2'}
