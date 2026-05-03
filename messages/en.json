@@ -1,9 +1,13 @@
 {
+  "Metadata": {
+    "title": "Sefo Nodzimo",
+    "description": "“Embraced by Light”"
+  },
   "LocaleLayout": {
     "header": "Header",
     "footer": "Footer"
   },
-  "HomePage": {
+  "IndexPage": {
     "title": "Hello, World!",
     "description": "It begins very small,\nSeems like nothing much at all,\nJust a germ, just a speck, just a grain.\n\nBut the seed has been sown,\nAnd before you know it's grown."
   }

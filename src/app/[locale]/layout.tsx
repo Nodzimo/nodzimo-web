@@ -17,15 +17,23 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
-export const metadata: Metadata = {
-  title: 'Sefo Nodzimo',
-  description: 'Nodzimo.com',
+type Params = {
+  params: Promise<{ locale: string }>
+}
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'Metadata' })
+
+  return {
+    title: t('title'),
+    description: t('description'),
+  }
 }
 
 type Props = {
   children: ReactNode
-  params: Promise<{ locale: string }>
-}
+} & Params
 
 export default async function LocaleLayout({ children, params }: Props) {
   // Ensure that the incoming `locale` is valid
