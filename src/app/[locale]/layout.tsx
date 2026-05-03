@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import '../globals.css'
 import { notFound } from 'next/navigation'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import type { ReactNode } from 'react'
 import { routing } from '@/i18n/routing'
 
@@ -29,6 +30,7 @@ type Props = {
 export default async function LocaleLayout({ children, params }: Props) {
   // Ensure that the incoming `locale` is valid
   const { locale } = await params
+  const t = await getTranslations('LocaleLayout')
 
   if (!hasLocale(routing.locales, locale)) {
     notFound()
@@ -41,13 +43,17 @@ export default async function LocaleLayout({ children, params }: Props) {
     >
       <body className={'flex min-h-full flex-col bg-lime-500'}>
         <NextIntlClientProvider>
-          <header className={'bg-sky-100 p-2 text-center'}>Header</header>
+          <header className={'bg-sky-100 p-2 text-center'}>
+            {t('header')}
+          </header>
           <main
             className={'flex grow items-center justify-center bg-amber-100 p-2'}
           >
             {children}
           </main>
-          <footer className={'bg-emerald-100 p-2 text-center'}>Footer</footer>
+          <footer className={'bg-emerald-100 p-2 text-center'}>
+            {t('footer')}
+          </footer>
         </NextIntlClientProvider>
       </body>
     </html>

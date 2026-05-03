@@ -1,5 +1,10 @@
 {
+  "LocaleLayout": {
+    "header": "Header",
+    "footer": "Footer"
+  },
   "HomePage": {
-    "title": "Hello, World!"
+    "title": "Hello, World!",
+    "description": "It begins very small,\nSeems like nothing much at all,\nJust a germ, just a speck, just a grain.\n\nBut the seed has been sown,\nAnd before you know it's grown."
   }
 }
