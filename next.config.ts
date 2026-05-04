@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   typedRoutes: true,
+  allowedDevOrigins: ['172.16.0.1'],
   devIndicators: {
     position: 'bottom-right',
   },
@@ -14,6 +15,12 @@ const withNextIntl = createNextIntlPlugin({
   experimental: {
     // Provide the path to the messages that you're using in `AppConfig`
     createMessagesDeclaration: './messages/en.json',
+    messages: {
+      path: './messages',
+      locales: 'infer',
+      format: 'json',
+      precompile: true,
+    },
   },
 })
 

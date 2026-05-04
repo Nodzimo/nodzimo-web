@@ -3,13 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "typegen": "next typegen",
-    "lint": "biome check",
-    "format": "biome format --write",
-    "i18n:check": "i18n-check --source en --locales messages --unused src --format next-intl"
+    "next:dev": "next dev",
+    "next:dev-https": "next dev --experimental-https",
+    "next:build": "next build",
+    "next:start": "next start",
+    "next:start-cpu-prof": "next start --experimental-cpu-prof",
+    "next:typegen": "next typegen",
+    "next:analyze": "next experimental-analyze",
+    "next:analyze-output": "next experimental-analyze --output",
+    "next:info": "next info",
+    "biome:lint": "biome check",
+    "biome:format": "biome format --write",
+    "i18n:check": "i18n-check --source en --locales messages --unused src --format next-intl",
+    "bun:install": "bun install",
+    "git:pull": "git pull"
   },
   "dependencies": {
     "clsx": "^2.1.1",
