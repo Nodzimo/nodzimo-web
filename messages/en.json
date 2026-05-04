@@ -3,6 +3,10 @@
     "title": "Sefo Nodzimo",
     "description": "“Embraced by Light”"
   },
+  "Navigation": {
+    "indexPage": "Index page",
+    "testPage": "Test page"
+  },
   "LocaleLayout": {
     "header": "Header",
     "footer": "Footer"
@@ -14,5 +18,10 @@
   "LocaleSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, ru {Russian} en {English} other {Unknown}}"
+  },
+  "TestPage": {
+    "pangram": "The quick brown fox jumps over the lazy dog",
+    "alphabetUppercase": "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z",
+    "alphabetLowercase": "a b c d e f g h i j k l m n o p q r s t u v w x y z"
   }
 }
