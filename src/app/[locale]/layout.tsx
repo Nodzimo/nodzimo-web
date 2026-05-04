@@ -60,7 +60,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider>
           <header
             className={
-              'flex flex-wrap items-center justify-between gap-2 bg-sky-100 p-2'
+              'sticky top-0 flex flex-wrap items-center justify-between gap-2 bg-sky-100 p-2'
             }
           >
             {t('header')}
