@@ -1,7 +1,9 @@
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
+import { useStaticLocale } from '@/i18n/static-locale'
 
-export default function TestPage() {
+export default function TestPage({ params }: PageProps<'/[locale]/test'>) {
+  useStaticLocale(params)
   const t = useTranslations()
 
   return (

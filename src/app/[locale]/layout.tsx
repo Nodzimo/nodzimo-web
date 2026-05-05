@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
 import { IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google'
 import '../globals.css'
-import { notFound } from 'next/navigation'
-import { hasLocale, NextIntlClientProvider } from 'next-intl'
+import { NextIntlClientProvider } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
-import type { ReactNode } from 'react'
 import LocaleSwitcher from '@/components/locale-switcher'
 import { routing } from '@/i18n/routing'
+import {
+  getLocaleFromParams,
+  setStaticLocaleFromParams,
+} from '@/i18n/static-locale'
 
 const ibmPlexSans = IBM_Plex_Sans({
   variable: '--app-font-sans',
@@ -19,17 +21,10 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ['400', '500', '600', '700'],
 })
 
-type Params = {
-  params: Promise<{ locale: string }>
-}
-
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const { locale } = await params
-
-  if (!hasLocale(routing.locales, locale)) {
-    notFound()
-  }
-
+export async function generateMetadata({
+  params,
+}: LayoutProps<'/[locale]'>): Promise<Metadata> {
+  const locale = await getLocaleFromParams(params)
   const t = await getTranslations({ locale, namespace: 'Metadata' })
 
   return {
@@ -38,18 +33,16 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   }
 }
 
-type Props = {
-  children: ReactNode
-} & Params
+export function generateStaticParams() {
+  return routing.locales.map(locale => ({ locale }))
+}
 
-export default async function LocaleLayout({ children, params }: Props) {
-  // Ensure that the incoming `locale` is valid
-  const { locale } = await params
-  const t = await getTranslations('LocaleLayout')
-
-  if (!hasLocale(routing.locales, locale)) {
-    notFound()
-  }
+export default async function LocaleLayout({
+  children,
+  params,
+}: LayoutProps<'/[locale]'>) {
+  const locale = await setStaticLocaleFromParams(params)
+  const t = await getTranslations({ locale, namespace: 'LocaleLayout' })
 
   return (
     <html
@@ -57,7 +50,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       className={`${ibmPlexSans.variable} ${ibmPlexMono.variable} h-full bg-fuchsia-500 antialiased`}
     >
       <body className={'flex min-h-full flex-col bg-lime-500'}>
-        <NextIntlClientProvider>
+        <NextIntlClientProvider messages={null}>
           <header
             className={
               'sticky top-0 flex flex-wrap items-center justify-between gap-2 bg-sky-100 p-2'
