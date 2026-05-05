@@ -7,7 +7,7 @@
     "dev-https": "next dev --port 3200 --experimental-https",
     "demo": "next build && next start --port 3300",
     "build": "next build --debug",
-    "start": "next start --port 3400",
+    "start": "next start",
     "start-cpu-prof": "next start --port 3500 --experimental-cpu-prof",
     "typegen-check": "next typegen && tsc --noEmit",
     "analyze": "next experimental-analyze",
