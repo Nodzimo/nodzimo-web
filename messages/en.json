@@ -3,10 +3,6 @@
     "title": "Sefo Nodzimo",
     "description": "“Embraced by Light”"
   },
-  "Navigation": {
-    "indexPage": "Index page",
-    "testPage": "Test page"
-  },
   "Header": {
     "header": "Header"
   },
@@ -15,7 +11,8 @@
   },
   "IndexPage": {
     "title": "Hello, World!",
-    "description": "It begins very small,\nSeems like nothing much at all,\nJust a germ, just a speck, just a grain.\n\nBut the seed has been sown,\nAnd before you know it's grown."
+    "description": "It begins very small,\nSeems like nothing much at all,\nJust a germ, just a speck, just a grain.\n\nBut the seed has been sown,\nAnd before you know it's grown.",
+    "testPageLink": "Test page"
   },
   "LocaleSwitcher": {
     "label": "Change language",
@@ -24,7 +21,8 @@
   "TestPage": {
     "pangram": "The quick brown fox jumps over the lazy dog",
     "alphabetUppercase": "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z",
-    "alphabetLowercase": "a b c d e f g h i j k l m n o p q r s t u v w x y z"
+    "alphabetLowercase": "a b c d e f g h i j k l m n o p q r s t u v w x y z",
+    "indexPageLink": "Index page"
   },
   "NotFound": {
     "title": "404 - Page not found",

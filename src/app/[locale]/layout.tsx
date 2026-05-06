@@ -30,6 +30,8 @@ export default async function LocaleLayout({
   params,
 }: LayoutProps<'/[locale]'>) {
   const locale = await setStaticLocaleFromParams(params)
+  const { region } = new Intl.Locale(locale)
+  console.debug(`[SN] Locale: ${locale}, Region: ${region}`)
 
   return (
     <html
