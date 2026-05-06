@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import '../globals.css'
 import { getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import {

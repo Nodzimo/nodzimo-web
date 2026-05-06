@@ -1,0 +1,21 @@
+import { fontVariables } from './[locale]/_lib'
+
+export default function NotFound() {
+  return (
+    <html lang={'en'} className={`${fontVariables} h-full`}>
+      <body
+        className={
+          'flex min-h-full flex-col items-center justify-center bg-red-500 font-bold'
+        }
+      >
+        <h1 className={'font-mono text-9xl'}>404</h1>
+        <a
+          href={'/'}
+          className={'text-4xl text-white decoration-white underline-offset-8'}
+        >
+          Nodzimo.com
+        </a>
+      </body>
+    </html>
+  )
+}
