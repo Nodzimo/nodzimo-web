@@ -19,6 +19,9 @@
     "i18n:check": "i18n-check --source en --locales messages --unused src --format next-intl",
     "deps:install": "bun install",
     "git:pull": "git pull",
+    "clean:next": "bun scripts/clean.ts next",
+    "clean:modules": "bun scripts/clean.ts modules",
+    "clean:all": "bun scripts/clean.ts next modules",
     "check": "bun run type:check && bun run lint && bun run i18n:check",
     "verify": "bun run check && bun run build"
   },
