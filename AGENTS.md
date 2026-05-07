@@ -39,6 +39,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 ## Layouts And Shell
 
 - Keep `<html>` and `<body>` in the route layout. They are part of the Next root layout contract.
+- The top-level `src/app/layout.tsx` exists for the root `not-found.tsx` fallback and should stay minimal: import `./globals.css` and pass through `children`.
 - It is fine to extract providers, header/footer/main shell components, and font setup out of the layout.
 - Keep `next/font` setup in route-local `_lib/fonts.ts` and export font variables/classes only. Do not hide unrelated HTML/Tailwind classes in font helpers.
 - Provider wrappers should stay thin. For `NextIntlClientProvider`, keep `messages={null}` unless client-side translations are intentionally needed.
@@ -52,6 +53,15 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Avoid server `useTranslations` in `loading.tsx`; use a neutral spinner/skeleton there. For translated loading states, prefer page/layout-level `<Suspense fallback>` where locale is already known, or a client component when handling client-side API state.
 - Localized `src/app/[locale]/not-found.tsx` may use `useTranslations`; it relies on locale setup from `[locale]/layout.tsx`.
 - For catch-all routes that always 404, use `export const dynamic = 'force-static'` and call `notFound()`.
+- Keep the root `src/app/not-found.tsx` as a standalone static fallback for non-localized edge cases such as dotted invalid URLs. Do not read `cookies()` or `headers()` there, and do not add a root-level next-intl provider just for this file; either choice can make static routes dynamic or duplicate i18n setup.
+- Root `not-found.tsx` is outside `[locale]`, so do not use next-intl hooks or locale-aware navigation there. Use a plain `<a href="/">` to return through the normal locale detection path.
+- If root `not-found.tsx` needs its own `<title>` or description, write a small `<head>` in that full-document fallback. Do not rely on `metadata` exports from `not-found.tsx`; Next documents metadata support for `global-not-found.tsx`, layouts, and pages, not ordinary `not-found.tsx`.
+
+## Styling
+
+- Import Tailwind/global CSS once from `src/app/layout.tsx`. Do not re-import `@import "tailwindcss"` in a root 404-specific stylesheet.
+- Put global element defaults, such as `body` styles, inside `@layer base` so Tailwind utility classes can override them without `!important`.
+- Avoid broad global link styling unless it is intentionally a site-wide default; prefer component or route-level Tailwind classes for specific link appearances.
 
 ## Verification
 
