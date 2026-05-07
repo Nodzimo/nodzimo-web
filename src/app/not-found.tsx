@@ -3,6 +3,9 @@ import { fontVariables } from './[locale]/_lib'
 export default function NotFound() {
   return (
     <html lang={'en'} className={`${fontVariables} h-full`}>
+      <head>
+        <title>404 | Nodzimo</title>
+      </head>
       <body
         className={
           'flex min-h-full flex-col items-center justify-center bg-red-500 font-bold'
