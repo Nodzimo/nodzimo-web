@@ -1,0 +1,4 @@
+interface:
+  display_name: "Next Intl Localizer"
+  short_description: "Update next-intl locale messages for this project."
+  default_prompt: "Update project locale messages using the next-intl localization rules."

@@ -21,6 +21,10 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Preserve the existing Russian conversational tone in user-facing discussion, but keep committed code and comments concise.
 - Do not add broad abstractions just to reduce line count. Extract code when it creates a clear route-local component, provider wrapper, or shared helper.
 
+## Skills
+
+- For next-intl message translation, synchronization, or validation, use the project-local `next-intl-localizer` skill at `.codex/skills/next-intl-localizer`.
+
 ## App Router Structure
 
 - Keep route-specific code colocated with the route segment.
