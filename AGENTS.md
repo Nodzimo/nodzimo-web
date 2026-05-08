@@ -54,6 +54,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - `[locale]/layout.tsx` is responsible for validating locale params and calling `setRequestLocale` through `setStaticLocaleFromParams`.
 - In `generateMetadata`, pass the locale explicitly to `getTranslations`, e.g. `getTranslations({locale, namespace})`.
 - In pages/layout children that receive params, call `useStaticLocale(params)` or the async helper before server `next-intl` APIs when static rendering matters.
+- Keep the generated sitemap at `src/app/sitemap.ts`. Build localized sitemap URLs through `getPathname` from `src/i18n/navigation` and `routing.locales`; do not hand-build locale prefixes.
+- With locale-prefix routing, default-locale sitemap URLs such as `/en` are expected. The root `/` is an entry point for locale detection, not the canonical content URL.
+- For the current small static route set, use one sitemap entry per route with `alternates.languages` for all locales. Move to per-locale entries only when localized pages need separate metadata such as distinct `lastModified` values.
 - Do not pass fake `params` props to special files. `loading.tsx` and `not-found.tsx` do not accept props.
 - Avoid server `useTranslations` in `loading.tsx`; use a neutral spinner/skeleton there. For translated loading states, prefer page/layout-level `<Suspense fallback>` where locale is already known, or a client component when handling client-side API state.
 - Localized `src/app/[locale]/not-found.tsx` may use `useTranslations`; it relies on locale setup from `[locale]/layout.tsx`.
