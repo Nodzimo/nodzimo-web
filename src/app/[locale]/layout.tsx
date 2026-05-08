@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import { getMessages, getTranslations } from 'next-intl/server'
+import { fontVariables } from '@/app/_lib'
 import { routing } from '@/i18n/routing'
 import {
   getLocaleFromParams,
   setStaticLocaleFromParams,
 } from '@/i18n/static-locale'
 import { Footer, Header, Main, Providers } from './_components'
-import { fontVariables } from './_lib'
 
 export async function generateMetadata({
   params,

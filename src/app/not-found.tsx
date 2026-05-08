@@ -1,4 +1,4 @@
-import { fontVariables } from './[locale]/_lib'
+import { fontVariables } from './_lib'
 
 export default function NotFound() {
   return (

@@ -1,6 +1,6 @@
 'use client' // Error boundaries must be Client Components
 
-import { fontVariables } from '@/app/[locale]/_lib'
+import { fontVariables } from './_lib'
 
 interface RetryHandler {
   // biome-ignore lint/style/useShorthandFunctionType: Avoids false positive from Next client-boundary check.
