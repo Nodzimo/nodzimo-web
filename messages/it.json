@@ -1,0 +1,32 @@
+{
+  "Metadata": {
+    "title": "Sefo Nodzimo",
+    "description": "«Avvolto dalla luce»"
+  },
+  "Header": {
+    "header": "Intestazione"
+  },
+  "Footer": {
+    "footer": "Piè di pagina"
+  },
+  "IndexPage": {
+    "title": "Ciao, mondo!",
+    "description": "Tutto comincia in piccolo,\nSembra quasi nulla,\nSolo un germoglio, un granello, un seme.\n\nMa il seme è stato piantato,\nE prima ancora di accorgertene,\nÈ già cresciuto.",
+    "testPageLink": "Pagina di test"
+  },
+  "LocaleSwitcher": {
+    "label": "Cambia lingua",
+    "locale": "{locale, select, en {Inglese} ru {Russo} be {Bielorusso} uk {Ucraino} de {Tedesco} fr {Francese} it {Italiano} es {Spagnolo} ar {Arabo} ja {Giapponese} zh {Cinese} other {Sconosciuto}}"
+  },
+  "TestPage": {
+    "pangram": "Pranzo d'acqua fa volti sghembi",
+    "alphabetUppercase": "A B C D E F G H I L M N O P Q R S T U V Z À È É Ì Ò Ù",
+    "alphabetLowercase": "a b c d e f g h i l m n o p q r s t u v z à è é ì ò ù",
+    "indexPageLink": "Pagina iniziale"
+  },
+  "NotFound": {
+    "title": "404 - Pagina non trovata",
+    "description": "La pagina che stai cercando non esiste",
+    "returnHomeLink": "Torna alla home"
+  }
+}

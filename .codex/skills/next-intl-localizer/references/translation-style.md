@@ -8,6 +8,42 @@ When English and Russian disagree, pause and mention the conflict unless the int
 
 ## Target Locales
 
+### Belarusian `be`
+
+- Use natural Belarusian in Cyrillic script.
+- Keep the UI wording close to Russian context when tone matters, but do not Russify Belarusian grammar or vocabulary.
+- Preserve concise interface phrasing.
+
+### Ukrainian `uk`
+
+- Use natural Ukrainian in Cyrillic script.
+- Use Russian as a nearby tone reference only; translate from English for interface clarity.
+- Preserve concise interface phrasing.
+
+### German `de`
+
+- Use standard German UI wording.
+- Prefer clear product language over long literal compounds when a shorter UI phrase is common.
+- Keep formal/neutral wording unless the source explicitly needs a more playful voice.
+
+### French `fr`
+
+- Use standard French UI wording.
+- Keep typography and punctuation natural for French where it does not conflict with JSON or ICU syntax.
+- Prefer concise, elegant phrasing over literal English word order.
+
+### Italian `it`
+
+- Use standard Italian UI wording.
+- Prefer warm but clear interface language.
+- Keep labels short enough for buttons and selectors.
+
+### Spanish `es`
+
+- Use neutral international Spanish.
+- Avoid country-specific slang.
+- Prefer clear, common UI terms that work for Spain and Latin America.
+
 ### Arabic `ar`
 
 - Use Modern Standard Arabic.

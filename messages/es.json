@@ -1,0 +1,32 @@
+{
+  "Metadata": {
+    "title": "Sefo Nodzimo",
+    "description": "«Abrazado por la luz»"
+  },
+  "Header": {
+    "header": "Encabezado"
+  },
+  "Footer": {
+    "footer": "Pie de página"
+  },
+  "IndexPage": {
+    "title": "¡Hola, mundo!",
+    "description": "Todo empieza muy pequeño,\nParece casi nada,\nSolo un brote, una mota, una semilla.\n\nPero la semilla ya fue sembrada,\nY antes de que te des cuenta,\nYa habrá crecido.",
+    "testPageLink": "Página de prueba"
+  },
+  "LocaleSwitcher": {
+    "label": "Cambiar idioma",
+    "locale": "{locale, select, en {Inglés} ru {Ruso} be {Bielorruso} uk {Ucraniano} de {Alemán} fr {Francés} it {Italiano} es {Español} ar {Árabe} ja {Japonés} zh {Chino} other {Desconocido}}"
+  },
+  "TestPage": {
+    "pangram": "El veloz murciélago hindú comía feliz cardillo y kiwi",
+    "alphabetUppercase": "A B C D E F G H I J K L M N Ñ O P Q R S T U V W X Y Z Á É Í Ó Ú Ü",
+    "alphabetLowercase": "a b c d e f g h i j k l m n ñ o p q r s t u v w x y z á é í ó ú ü",
+    "indexPageLink": "Página principal"
+  },
+  "NotFound": {
+    "title": "404 - Página no encontrada",
+    "description": "La página que buscas no existe",
+    "returnHomeLink": "Volver al inicio"
+  }
+}
