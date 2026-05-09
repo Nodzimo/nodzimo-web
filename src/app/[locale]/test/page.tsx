@@ -1,7 +1,19 @@
+import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { useStaticLocale } from '@/i18n/static-locale'
+import { getMetadataTranslations } from '../_lib/metadata'
 import { ThrowErrorButton } from './_components'
+
+export async function generateMetadata({
+  params,
+}: PageProps<'/[locale]/test'>): Promise<Metadata> {
+  const { t } = await getMetadataTranslations(params, 'TestPage')
+
+  return {
+    title: t('title'),
+  }
+}
 
 export default function TestPage({ params }: PageProps<'/[locale]/test'>) {
   useStaticLocale(params)

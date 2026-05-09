@@ -19,6 +19,7 @@
     "locale": "{locale, select, en {Englisch} ru {Russisch} be {Belarussisch} uk {Ukrainisch} de {Deutsch} fr {Französisch} it {Italienisch} es {Spanisch} ar {Arabisch} zh {Chinesisch} ja {Japanisch} other {Unbekannt}}"
   },
   "TestPage": {
+    "title": "Test",
     "pangram": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern",
     "alphabetUppercase": "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Ä Ö Ü ẞ",
     "alphabetLowercase": "a b c d e f g h i j k l m n o p q r s t u v w x y z ä ö ü ß",

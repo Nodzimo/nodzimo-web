@@ -19,6 +19,7 @@
     "locale": "{locale, select, en {英语} ru {俄语} be {白俄罗斯语} uk {乌克兰语} de {德语} fr {法语} it {意大利语} es {西班牙语} ar {阿拉伯语} zh {中文} ja {日语} other {未知}}"
   },
   "TestPage": {
+    "title": "测试",
     "pangram": "快速的棕色狐狸跳过懒狗",
     "alphabetUppercase": "一 二 三 四 五 六 七 八 九 十 百 千 万 山 水 火 木 金 土 日 月",
     "alphabetLowercase": "的 一 是 不 了 在 人 有 和 国 中 大 为 上 个",

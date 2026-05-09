@@ -19,6 +19,7 @@
     "locale": "{locale, select, en {Inglese} ru {Russo} be {Bielorusso} uk {Ucraino} de {Tedesco} fr {Francese} it {Italiano} es {Spagnolo} ar {Arabo} zh {Cinese} ja {Giapponese} other {Sconosciuto}}"
   },
   "TestPage": {
+    "title": "Test",
     "pangram": "Pranzo d'acqua fa volti sghembi",
     "alphabetUppercase": "A B C D E F G H I L M N O P Q R S T U V Z À È É Ì Ò Ù",
     "alphabetLowercase": "a b c d e f g h i l m n o p q r s t u v z à è é ì ò ù",

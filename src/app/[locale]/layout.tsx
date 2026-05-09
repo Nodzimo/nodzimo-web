@@ -1,21 +1,22 @@
 import type { Metadata } from 'next'
-import { getMessages, getTranslations } from 'next-intl/server'
+import { getMessages } from 'next-intl/server'
 import { fontVariables } from '@/app/_lib'
 import { routing } from '@/i18n/routing'
-import {
-  getLocaleFromParams,
-  setStaticLocaleFromParams,
-} from '@/i18n/static-locale'
+import { setStaticLocaleFromParams } from '@/i18n/static-locale'
 import { Footer, Header, Main, Providers } from './_components'
+import { getMetadataTranslations } from './_lib'
 
 export async function generateMetadata({
   params,
-}: Omit<LayoutProps<'/[locale]'>, 'children'>): Promise<Metadata> {
-  const locale = await getLocaleFromParams(params)
-  const t = await getTranslations({ locale, namespace: 'Metadata' })
+}: LayoutProps<'/[locale]'>): Promise<Metadata> {
+  const { locale, t } = await getMetadataTranslations(params, 'Metadata')
+  const title = t('title')
 
   return {
-    title: t('title'),
+    title: {
+      default: title,
+      template: `%s | ${title} | ${locale.toUpperCase()}`,
+    },
     description: t('description'),
   }
 }
