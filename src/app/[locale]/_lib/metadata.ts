@@ -1,6 +1,6 @@
 import type { Messages, NamespaceKeys, NestedKeyOf } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
-import { getLocaleFromParams } from '@/i18n/static-locale'
+import { getLocaleFromParams } from '@/i18n'
 
 type LocaleParams = { locale: string }
 

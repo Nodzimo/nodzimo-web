@@ -1,6 +1,5 @@
 import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
-import { useStaticLocale } from '@/i18n/static-locale'
+import { Link, useStaticLocale } from '@/i18n'
 
 export default function IndexPage({ params }: PageProps<'/[locale]'>) {
   useStaticLocale(params)

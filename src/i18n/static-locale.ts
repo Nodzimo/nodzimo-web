@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import { hasLocale, type Locale } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { use } from 'react'
-import { routing } from '@/i18n/routing'
+import { routing } from './routing'
 
 type LocaleParams = Promise<{ locale: string }>
 

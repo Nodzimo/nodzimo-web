@@ -13,6 +13,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Styling: Tailwind CSS v4, checked by Biome with sorted Tailwind classes.
 - Internationalization: `next-intl` with locale routes under `src/app/[locale]`.
 - Routing helpers live in `src/i18n`; prefer them over raw Next navigation when locale-aware behavior is needed.
+- `src/i18n/index.ts` is the public i18n barrel. App code may import navigation, routing, and static-locale helpers from `@/i18n`; keep `request.ts` as an internal config entry and do not re-export it from the barrel.
 
 ## Collaboration
 
@@ -53,6 +54,8 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 - `[locale]/layout.tsx` is responsible for validating locale params and calling `setRequestLocale` through `setStaticLocaleFromParams`.
 - In `generateMetadata`, pass the locale explicitly to `getTranslations`, e.g. `getTranslations({locale, namespace})`.
+- For localized route metadata under `src/app/[locale]`, prefer the route-local `getMetadataTranslations` helper from `src/app/[locale]/_lib` to get `{locale, params, t}` from `params` and a typed `next-intl` namespace, then return the actual `Metadata` object explicitly in the page/layout.
+- Do not export both `metadata` and `generateMetadata` from the same route segment.
 - In pages/layout children that receive params, call `useStaticLocale(params)` or the async helper before server `next-intl` APIs when static rendering matters.
 - Keep the generated sitemap at `src/app/sitemap.ts`. Build localized sitemap URLs through `getPathname` from `src/i18n/navigation` and `routing.locales`; do not hand-build locale prefixes.
 - With locale-prefix routing, default-locale sitemap URLs such as `/en` are expected. The root `/` is an entry point for locale detection, not the canonical content URL.
@@ -73,7 +76,8 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Verification
 
-- Prefer `bun run typegen-check` for route type and TypeScript validation.
-- Prefer `bun run biome:lint` for lint/style validation.
+- Prefer `bun run type:check` for route type and TypeScript validation.
+- Prefer `bun run lint` for lint/style validation.
+- `i18n-check --unused` can report false positives for translation keys used through metadata helpers or other wrapper functions. Treat missing, invalid, and undefined keys as hard failures; review unused-key findings before removing translations.
 - Use `bun run build` when changes affect routing, rendering mode, i18n, metadata, fonts, providers, or App Router special files.
 - Watch the build route table. Expected healthy output for current localized routes is static/SSG, not `ƒ Dynamic`, except middleware/proxy.

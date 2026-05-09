@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { getMessages } from 'next-intl/server'
 import { fontVariables } from '@/app/_lib'
-import { routing } from '@/i18n/routing'
-import { setStaticLocaleFromParams } from '@/i18n/static-locale'
+import { routing, setStaticLocaleFromParams } from '@/i18n'
 import { Footer, Header, Main, Providers } from './_components'
 import { getMetadataTranslations } from './_lib'
 
