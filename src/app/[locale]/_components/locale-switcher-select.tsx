@@ -39,7 +39,7 @@ export function LocaleSwitcherSelect({ children, defaultValue, label }: Props) {
         isPending && 'transition-opacity disabled:opacity-30',
       )}
     >
-      <p className={'sr-only'}>{label}</p>
+      <span className={'sr-only'}>{label}</span>
       <select
         className={'cursor-pointer'}
         defaultValue={defaultValue}
