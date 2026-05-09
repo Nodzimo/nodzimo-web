@@ -26,6 +26,7 @@ export default function TestPage({ params }: PageProps<'/[locale]/test'>) {
         errorMessage={t('testError')}
       />
       <a href={'/sitemap.xml'}>Sitemap.xml</a>
+      <a href={'/robots.txt'}>Robots.txt</a>
       <p>{t('pangram')}</p>
       <p>{t('alphabetUppercase')}</p>
       <p>{t('alphabetLowercase')}</p>
