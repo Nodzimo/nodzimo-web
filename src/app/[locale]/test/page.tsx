@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
+import { Card } from 'nodzimo-ui'
+import { Button } from 'nodzimo-ui/client'
 import { Link, useStaticLocale } from '@/i18n'
 import { getMetadataTranslations } from '../_lib/metadata'
 import { ThrowErrorButton } from './_components'
@@ -20,6 +22,8 @@ export default function TestPage({ params }: PageProps<'/[locale]/test'>) {
 
 	return (
 		<div className={'flex flex-col gap-10'}>
+			<Button>Web B</Button>
+			<Card>Web C</Card>
 			<Link href={'/'}>{t('indexPageLink')}</Link>
 			<ThrowErrorButton
 				label={t('throwErrorButton')}
