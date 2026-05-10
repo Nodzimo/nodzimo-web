@@ -15,6 +15,31 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Routing helpers live in `src/i18n`; prefer them over raw Next navigation when locale-aware behavior is needed.
 - `src/i18n/index.ts` is the public i18n barrel. App code may import navigation, routing, and static-locale helpers from `@/i18n`; keep `request.ts` as an internal config entry and do not re-export it from the barrel.
 
+## Local UI Kit Consumption
+
+- `nodzimo-ui` is developed as a separate sibling project, not as part of a monorepo.
+- Treat the sibling UI kit as its own project with its own `AGENTS.md`. Keep package-internal build, source layout, export-map, React Compiler, and core/client boundary rules documented there; keep only Next-consumer integration rules in this file.
+- Keep this project on Turbopack for normal dev/build. Do not switch the default workflow to webpack just to consume the local UI kit.
+- Avoid `bun link nodzimo-ui` for Next/Turbopack. Linked/junction packages can fail Turbopack resolution even when Node, Bun, and the IDE resolve them correctly. Related upstream issues:
+  - https://github.com/vercel/next.js/issues/77562
+  - https://github.com/vercel/next.js/issues/65125
+  - https://github.com/vercel/next.js/issues/64472
+- `turbopack.root` is the official linked-package workaround: Turbopack only resolves files inside its root, and linked dependencies outside the project root require setting the root to the parent of both the app and linked dependency. Do not use that workaround here unless the parent folder becomes a real workspace/monorepo root with its own `package.json` and dependency install. In this project, setting `turbopack.root` to the sibling parent broke Tailwind/PostCSS dependency resolution.
+- Avoid `file:../nodzimo-ui` as a folder dependency with Bun on Windows. Bun can try to copy the whole UI kit working directory, including `.git`, and fail with `EPERM`.
+- Preferred local workflow for now: build and pack `nodzimo-ui`, then consume the generated `.tgz` through a `file:` dependency.
+- Current dependency shape is a local tarball dependency: `"nodzimo-ui": "../nodzimo-ui/nodzimo-ui.tgz"`.
+- When updating the UI kit locally, run `bun run lib:pack` in `../nodzimo-ui`, then reinstall it here with `bun run ui:reinstall` before testing this app.
+- Do not add `transpilePackages: ['nodzimo-ui']` by default. It did not fix the `bun link`/Turbopack issue, and the packed UI kit works as a normal built dependency without it.
+- Add `transpilePackages` only for a reproduced package-transpilation problem, such as importing uncompiled source from a package. If added, document the exact error it fixes and verify that removing it still fails.
+- Keep `reactCompiler: true` enabled in this app; the UI kit also uses React Compiler for its client entry.
+- Import UI kit exports only from public entrypoints:
+  - `nodzimo-ui` for RSC-safe/core exports.
+  - `nodzimo-ui/client` for client-boundary exports.
+- Do not import from `nodzimo-ui/src`, `nodzimo-ui/dist`, or other deep internal paths.
+- If UI kit imports fail, first verify the installed package in `node_modules/nodzimo-ui` contains `dist/nodzimo-ui.js`, `dist/client.js`, generated declarations under `dist/src`, and package `exports` entries for `"."` and `"./client"`.
+- If a component works in a plain Vite consumer but fails in this Next app, check the packed output and Next package installation before changing app architecture.
+- The tarball workflow is a local development workaround, not a publishing requirement. Revisit it when the UI kit is published to a registry.
+
 ## Collaboration
 
 - If the user asks an architecture or best-practice question, answer first and do not edit files unless explicitly asked.
