@@ -23,8 +23,9 @@
 		"i18n:unused": "bun run i18n:check --unused src",
 		"deps:install": "bun install",
 		"deps:outdated": "bun outdated",
+		"deps:update": "bun update --interactive",
 		"ui:link": "bun link nodzimo-ui",
-		"ui:add": "bun i ../nodzimo-ui/nodzimo-ui.tgz",
+		"ui:add": "bun install ../nodzimo-ui/nodzimo-ui.tgz",
 		"ui:remove": "bun remove nodzimo-ui",
 		"ui:reinstall": "bun run ui:remove && bun run ui:add",
 		"git:pull": "git pull",
@@ -40,21 +41,21 @@
 	},
 	"dependencies": {
 		"clsx": "2.1.1",
-		"next": "16.2.4",
-		"next-intl": "4.11.0",
+		"next": "16.2.6",
+		"next-intl": "4.11.1",
 		"nodzimo-ui": "../nodzimo-ui/nodzimo-ui.tgz",
-		"react": "19.2.5",
-		"react-dom": "19.2.5"
+		"react": "19.2.6",
+		"react-dom": "19.2.6"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.14",
+		"@biomejs/biome": "2.4.15",
 		"@lingual/i18n-check": "0.9.5",
-		"@tailwindcss/postcss": "4.2.4",
-		"@types/node": "25.6.0",
+		"@tailwindcss/postcss": "4.3.0",
+		"@types/node": "25.6.2",
 		"@types/react": "19.2.14",
 		"@types/react-dom": "19.2.3",
 		"babel-plugin-react-compiler": "1.0.0",
-		"tailwindcss": "4.2.4",
+		"tailwindcss": "4.3.0",
 		"typescript": "6.0.3"
 	},
 	"ignoreScripts": [
