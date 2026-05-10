@@ -5,19 +5,8 @@
     "clientKind": "git",
     "useIgnoreFile": true
   },
-  "files": {
-    "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
-  },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 2
-  },
   "linter": {
-    "enabled": true,
     "rules": {
-      "recommended": true,
       "suspicious": {
         "noUnknownAtRules": "off"
       },
@@ -30,13 +19,6 @@
       "react": "recommended"
     }
   },
-  "assist": {
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
-    }
-  },
   "javascript": {
     "formatter": {
       "semicolons": "asNeeded",
@@ -45,5 +27,6 @@
       "arrowParentheses": "asNeeded"
     }
   },
-  "css": { "parser": { "tailwindDirectives": true } }
+  "css": { "parser": { "tailwindDirectives": true } },
+  "json": { "parser": { "allowComments": false } }
 }
