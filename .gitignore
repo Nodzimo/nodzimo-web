@@ -44,6 +44,10 @@ next-env.d.ts
 /.idea/*
 !/.idea/dictionaries/
 !/.idea/dictionaries/**
+!/.idea/inspectionProfiles/
+!/.idea/inspectionProfiles/**
+!/.idea/scopes/
+!/.idea/scopes/**
 
 messages/*.d.json.ts
 certificates
