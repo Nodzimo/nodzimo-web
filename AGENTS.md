@@ -86,6 +86,9 @@ the relevant guide in `node_modules/next/dist/docs/` before writing any code. He
 
 - For next-intl message translation, synchronization, or validation, use the project-local `next-intl-localizer` skill
   at `.codex/skills/next-intl-localizer`.
+- For pre-update dependency research from `bun outdated`, post-update changelog review, breaking-change triage, or
+  deciding whether upgraded packages need local code/config changes, use the project-local
+  `dependency-update-reviewer` skill at `.codex/skills/dependency-update-reviewer`.
 - Keep supported locale order consistent across routing, selectors, and message select cases: `en`, `ru`, `be`, `uk`,
   `de`, `fr`, `it`, `es`, `ar`, `zh`, `ja`.
 
