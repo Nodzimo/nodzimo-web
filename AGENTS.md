@@ -173,6 +173,14 @@ the relevant guide in `node_modules/next/dist/docs/` before writing any code. He
 - Avoid broad global link styling unless it is intentionally a site-wide default; prefer component or route-level
   Tailwind classes for specific link appearances.
 
+## Cleanup Scripts
+
+- Keep generated project artifacts under `clean:next`, including Next output, generated TypeScript files, generated
+  i18n declarations, and the Dependency Cruiser SVG graph.
+- Keep dependency installs under `clean:modules`.
+- Keep generated HTTPS certificates under `clean:certs`; `clean:all` should include certificates along with the other
+  cleanup targets.
+
 ## Verification
 
 - Use `bun run project:audit` for the full non-build project audit. It runs route type generation/checking, Biome,

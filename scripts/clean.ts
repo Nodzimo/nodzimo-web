@@ -7,12 +7,22 @@ const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 
 const cleanTargets = {
 	next: {
-		label: 'Next.js generated artifacts',
-		paths: ['.next', 'next-env.d.ts', '*.tsbuildinfo', 'messages/*.d.json.ts'],
+		label: 'generated project artifacts',
+		paths: [
+			'.next',
+			'next-env.d.ts',
+			'*.tsbuildinfo',
+			'messages/*.d.json.ts',
+			'dependency-graph.svg',
+		],
 	},
 	modules: {
 		label: 'installed dependencies',
 		paths: ['node_modules'],
+	},
+	certs: {
+		label: 'generated certificates',
+		paths: ['certificates'],
 	},
 } as const
 

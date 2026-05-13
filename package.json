@@ -22,7 +22,7 @@
 		"check:fix": "bun run check:lint --write",
 		"check:fix-unsafe": "bun run check:fix --unsafe",
 		"check:deps": "depcruise src",
-		"check:deps-graph": "depcruise src --include-only \"^src\" --output-type dot | dot -T svg > dependency-graph.svg",
+		"check:deps-graph": "depcruise src --include-only '^src' --output-type dot | dot -Tsvg > dependency-graph.svg",
 		"i18n:check": "i18n-check --source en --locales messages --format next-intl",
 		"i18n:unused": "bun run i18n:check --unused src",
 		"deps:install": "bun install",
@@ -37,9 +37,10 @@
 		"git:normalize": "git add --renormalize .",
 		"git:stash": "git stash",
 		"git:stash-pop": "git stash pop",
-		"clean:next": "bun scripts/clean.ts next",
-		"clean:modules": "bun scripts/clean.ts modules",
-		"clean:all": "bun scripts/clean.ts next modules"
+		"clean:next": "bun scripts/clean next",
+		"clean:modules": "bun scripts/clean modules",
+		"clean:certs": "bun scripts/clean certs",
+		"clean:all": "bun scripts/clean next modules certs"
 	},
 	"engines": {
 		"node": "25.x",
