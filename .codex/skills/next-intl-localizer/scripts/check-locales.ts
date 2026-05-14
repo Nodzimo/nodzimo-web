@@ -1,3 +1,5 @@
+/// <reference types="node" />
+
 import { readdirSync, readFileSync } from 'node:fs'
 import { basename, join } from 'node:path'
 
@@ -136,7 +138,7 @@ for (const file of localeFiles) {
 		}
 
 		if (placeholderMismatches.length > 0) {
-			console.error(`  ICU placeholder mismatches:`)
+			console.error('  ICU placeholder mismatches:')
 			for (const mismatch of placeholderMismatches) {
 				console.error(`    - ${mismatch}`)
 			}
