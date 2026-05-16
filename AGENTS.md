@@ -89,6 +89,9 @@ the relevant guide in `node_modules/next/dist/docs/` before writing any code. He
 - For pre-update dependency research from `bun outdated`, post-update changelog review, breaking-change triage, or
   deciding whether upgraded packages need local code/config changes, use the project-local
   `dependency-update-reviewer` skill at `.codex/skills/dependency-update-reviewer`.
+- For choosing or debugging Next rendering modes, RSC/SSR/client boundaries, route static/dynamic behavior, Suspense
+  streaming, or build failures involving `createContext`, hooks, or third-party packages, use the project-local
+  `next-rendering-diagnostics` skill at `.codex/skills/next-rendering-diagnostics`.
 - Keep supported locale order consistent across routing, selectors, and message select cases: `en`, `ru`, `be`, `uk`,
   `de`, `fr`, `it`, `es`, `ar`, `zh`, `ja`.
 
@@ -143,6 +146,40 @@ the relevant guide in `node_modules/next/dist/docs/` before writing any code. He
   HTML/Tailwind classes in font helpers.
 - Provider wrappers should stay thin. For `NextIntlClientProvider`, keep `messages={null}` unless client-side
   translations are intentionally needed.
+
+## Next Rendering Model
+
+- Read the installed Next docs under `node_modules/next/dist/docs/` before changing rendering behavior. This project is
+  on Next 16, and old App Router assumptions may be wrong.
+- Pages and layouts are Server Components by default. Use them for data access, metadata, locale setup, static shell
+  rendering, streaming, and keeping JavaScript out of the browser bundle.
+- React Server Components (RSC) are not the same as ordinary server-side rendering. RSC uses React's `react-server`
+  condition and cannot use React context APIs such as `createContext`/`useContext`, state/effect hooks, event handlers,
+  or browser APIs.
+- Server-side rendering (SSR) is the server HTML render pass. SSR can render many React components that use APIs such as
+  `createContext`, `forwardRef`, and `createElement`, but SSR compatibility does not prove RSC compatibility.
+- Client Components start at a `'use client'` boundary. Use them only for state, effects, event handlers, browser APIs,
+  custom client hooks, and third-party widgets that are not RSC-safe. Keep the boundary as deep and narrow as possible.
+- A Server Component may render a Client Component. The route can still remain static/SSG if it does not use
+  request-time
+  APIs or uncached runtime data.
+- Static/SSG output means the route was pre-rendered at build time. It is the expected default for this small localized
+  site and gives fast HTML, cacheable output, and less runtime server work.
+- Dynamic rendering is for route output that must depend on request-time data such as `headers()`, `cookies()`,
+  `searchParams`, auth/session state, geolocation, uncached fetches, or explicitly request-bound values through
+  `connection()`.
+- `searchParams` is request-time data and opts the page into dynamic rendering. Avoid it in pages intended to stay SSG;
+  prefer static params, localized path segments, or client-side query handling when the content can remain static.
+- Use `<Suspense>` close to slow or uncached data so stable page chrome can render or stream independently. A
+  segment-level `loading.tsx` wraps the page below it, but uncached/runtime work in a layout can still block navigation.
+- Providers should be rendered as deep as possible. Do not wrap the entire document with client providers unless the
+  whole tree genuinely needs that provider; this helps Next optimize static Server Component regions.
+- When adding third-party UI packages, first decide whether they are imported from a Server Component or behind a client
+  boundary. If a package needs hooks, context, effects, event handlers, or browser APIs and does not provide a correct
+  `'use client'` entry, wrap it in a local Client Component.
+- A build error like `TypeError: createContext is not a function` during page data collection usually means an RSC graph
+  imported code that expects ordinary/client React. First inspect the importing route, UI-kit package entrypoint,
+  third-party package boundary, and compiled `.next/server/chunks` before changing app architecture.
 
 ## next-intl And Static Rendering
 

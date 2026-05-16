@@ -1,0 +1,3 @@
+display_name: Next Rendering Diagnostics
+short_description: Diagnose App Router RSC, SSR, client, static, dynamic, and Suspense behavior.
+default_prompt: Diagnose the Next.js rendering mode or boundary issue and recommend the smallest safe fix.
