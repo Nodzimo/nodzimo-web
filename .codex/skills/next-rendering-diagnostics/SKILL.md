@@ -16,8 +16,13 @@ local model and checklist, read `references/rendering-model.md`.
 ## Quick Model
 
 - Server Components are the default for pages/layouts. Prefer them for static shell, metadata, locale setup, server
-  data,
-  secrets, and less client JavaScript.
+  data, secrets, and less client JavaScript.
+- RSC is the server component graph/payload layer: it decides what runs only on the server, what is serialized to client
+  islands, and what JavaScript can be omitted from the browser bundle.
+- SSR is the HTML render pass: it turns the RSC payload plus Client Component references into initial HTML for first
+  load, SSG output, or request-time responses.
+- In App Router, RSC and SSR usually cooperate. RSC is not "SSR replacement" and SSR is not a license to import
+  SSR-safe packages into the RSC graph.
 - RSC is stricter than SSR. RSC cannot use context APIs, state/effect hooks, event handlers, or browser APIs.
 - Client Components begin at `'use client'`. Use them for interactivity, browser APIs, state/effects, and unsafe
   third-party widgets. Keep the boundary deep and narrow.
@@ -55,4 +60,3 @@ local model and checklist, read `references/rendering-model.md`.
     - Use `bun run type:check` for route/types.
     - Use `bun run build` when rendering mode, routing, metadata, providers, i18n, or App Router special files changed.
     - Watch the route table. Current localized routes should stay static/SSG unless dynamic rendering is intentional.
-
