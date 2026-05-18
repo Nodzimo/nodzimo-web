@@ -11,6 +11,7 @@ the relevant guide in `node_modules/next/dist/docs/` before writing any code. He
 ## Stack
 
 - Package/runtime tooling: Bun.
+- Runtime baseline: Node 25.x, Bun 1.3.x.
 - Framework: Next.js 16 App Router with React 19 and TypeScript strict mode.
 - Styling: Tailwind CSS v4, checked by Biome with sorted Tailwind classes.
 - Internationalization: `next-intl` with locale routes under `src/app/[locale]`.
@@ -24,18 +25,19 @@ the relevant guide in `node_modules/next/dist/docs/` before writing any code. He
   deploys.
 - Keep `@sefo/nodzimo-ui` in `dependencies`, not `devDependencies`, because app code imports its runtime components and
   compiled stylesheet.
-- Use `"@sefo/nodzimo-ui": "latest"` when this app should always target the current npm `latest` dist-tag, including
-  major releases. Remember that `bun.lock` still pins the resolved version; run `bun update @sefo/nodzimo-ui --latest`
-  or `bun add @sefo/nodzimo-ui@latest` when refreshing the installed package.
+- Pin `@sefo/nodzimo-ui` to the intended published version in `package.json` for reproducible app installs. Update it
+  intentionally with `bun add @sefo/nodzimo-ui@<version>` or `bun update @sefo/nodzimo-ui` when refreshing the installed
+  package; avoid switching back to a floating `latest` range unless that policy is explicitly chosen again.
 - Local UI-kit development still uses the sibling `../nodzimo-ui` project when testing unpublished changes. Build and
   pack the UI kit there, then install the generated tarball here through the existing app scripts.
 - Preferred local unpublished-change workflow: run `bun run lib:pack` in `../nodzimo-ui`, then run
   `bun run ui:reinstall`
   in this project. This temporarily changes the installed package source to the generated local `.tgz`; switch back to
-  npm with `bun add @sefo/nodzimo-ui@latest` or `bun update @sefo/nodzimo-ui --latest` before treating the app as
+  npm with `bun add @sefo/nodzimo-ui@<version>` or `bun update @sefo/nodzimo-ui` before treating the app as
   production-ready.
-- Avoid `bun link @sefo/nodzimo-ui` for Next/Turbopack. Linked/junction packages can fail Turbopack resolution even when
-  Node, Bun, and the IDE resolve them correctly. Related upstream issues:
+- Avoid `bun run ui:link`, `bun link nodzimo-ui`, and `bun link @sefo/nodzimo-ui` for Next/Turbopack.
+  Linked/junction packages can fail Turbopack resolution even when Node, Bun, and the IDE resolve them correctly.
+  Related upstream issues:
     - https://github.com/vercel/next.js/issues/85057
     - https://github.com/vercel/next.js/issues/77562
     - https://github.com/vercel/next.js/issues/65125
@@ -109,11 +111,14 @@ the relevant guide in `node_modules/next/dist/docs/` before writing any code. He
 - Keep the Next and React lint domains enabled because this is a Next/React application.
 - Keep JavaScript formatter preferences explicit: single quotes, no unnecessary semicolons, single JSX quotes, and
   as-needed arrow parentheses.
+- Keep HTML formatter support enabled so checked HTML-like files follow the same project tooling path.
 - Keep JSON comments disabled. Project JSON files should be strict JSON, not JSONC.
 - Keep Tailwind CSS v4 parser support enabled through `css.parser.tailwindDirectives`.
-- Keep `suspicious.noUnknownAtRules` disabled while Tailwind v4 at-rules such as `@theme` are used and Biome's CSS rule
-  would otherwise report them.
+- Do not add a `suspicious.noUnknownAtRules` exception unless the current Biome version again reports Tailwind v4
+  directives such as `@theme` as false positives.
 - Keep Tailwind utility class sorting enabled through Biome's `nursery.useSortedClasses` rule.
+- Keep attribute sorting enabled through `assist.actions.source.useSortedAttributes`.
+- Keep `style.noUnusedTemplateLiteral` enabled to catch unnecessary template literals.
 - Do not add `files.includes` globs that duplicate `.gitignore` unless Biome needs a narrower project-specific scope.
 - Biome does not format Markdown in this setup. Format Markdown files manually or with the editor, and avoid assuming
   `bun run check:lint` validates Markdown formatting.
