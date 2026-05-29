@@ -1,42 +1,42 @@
 {
-	"Metadata": {
-		"title": "سيفو نودزيمو",
-		"description": "«محاط بالنور»"
-	},
-	"Header": {
-		"header": "الترويسة"
+	"ErrorPage": {
+		"errorDigest": "رمز الخطأ: ",
+		"errorMessage": "رسالة الخطأ",
+		"errorStack": "مكدس الخطأ",
+		"somethingWentWrong": "حدث خطأ ما!",
+		"tryAgain": "حاول مرة أخرى"
 	},
 	"Footer": {
 		"footer": "التذييل"
 	},
+	"Header": {
+		"header": "الترويسة"
+	},
 	"IndexPage": {
-		"title": "مرحبًا بالعالم!",
 		"description": "يبدأ الأمر صغيرًا جدًا،\nكأنه لا شيء تقريبًا،\nمجرد بذرة، مجرد ذرة، مجرد حبة.\n\nلكن البذرة قد زُرعت،\nوقبل أن تشعر، تراها قد كبرت.",
-		"testPageLink": "صفحة الاختبار"
+		"testPageLink": "صفحة الاختبار",
+		"title": "مرحبًا بالعالم!"
 	},
 	"LocaleSwitcher": {
 		"label": "تغيير اللغة",
 		"locale": "{locale, select, en {الإنجليزية} ru {الروسية} be {البيلاروسية} uk {الأوكرانية} de {الألمانية} fr {الفرنسية} it {الإيطالية} es {الإسبانية} ar {العربية} zh {الصينية} ja {اليابانية} other {غير معروف}}"
 	},
-	"TestPage": {
-		"title": "اختبار",
-		"pangram": "نص حكيم له سر قاطع وذو شأن عظيم",
-		"alphabetUppercase": "ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي",
-		"alphabetLowercase": "ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي",
-		"indexPageLink": "الصفحة الرئيسية",
-		"throwErrorButton": "إظهار خطأ",
-		"testError": "خطأ اختباري"
+	"Metadata": {
+		"description": "«محاط بالنور»",
+		"title": "سيفو نودزيمو"
 	},
 	"NotFound": {
-		"title": "404 - الصفحة غير موجودة",
 		"description": "الصفحة التي تبحث عنها غير موجودة",
-		"returnHomeLink": "العودة إلى الرئيسية"
+		"returnHomeLink": "العودة إلى الرئيسية",
+		"title": "404 - الصفحة غير موجودة"
 	},
-	"ErrorPage": {
-		"somethingWentWrong": "حدث خطأ ما!",
-		"errorDigest": "رمز الخطأ: ",
-		"errorMessage": "رسالة الخطأ",
-		"errorStack": "مكدس الخطأ",
-		"tryAgain": "حاول مرة أخرى"
+	"TestPage": {
+		"alphabetLowercase": "ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي",
+		"alphabetUppercase": "ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي",
+		"indexPageLink": "الصفحة الرئيسية",
+		"pangram": "نص حكيم له سر قاطع وذو شأن عظيم",
+		"testError": "خطأ اختباري",
+		"throwErrorButton": "إظهار خطأ",
+		"title": "اختبار"
 	}
 }

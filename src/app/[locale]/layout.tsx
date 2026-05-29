@@ -12,11 +12,11 @@ export async function generateMetadata({
 	const title = t('title')
 
 	return {
+		description: t('description'),
 		title: {
 			default: title,
 			template: `%s | ${title} | ${locale.toUpperCase()}`,
 		},
-		description: t('description'),
 	}
 }
 

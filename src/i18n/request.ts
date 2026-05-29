@@ -24,9 +24,9 @@ export const formats = {
 			year: 'numeric',
 		},
 	},
-	number: {
-		precise: {
-			maximumFractionDigits: 5,
+	displayName: {
+		region: {
+			type: 'region',
 		},
 	},
 	list: {
@@ -35,9 +35,9 @@ export const formats = {
 			type: 'conjunction',
 		},
 	},
-	displayName: {
-		region: {
-			type: 'region',
+	number: {
+		precise: {
+			maximumFractionDigits: 5,
 		},
 	},
 } satisfies Formats

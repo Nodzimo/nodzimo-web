@@ -1,11 +1,20 @@
 import { defineRouting } from 'next-intl/routing'
 
 export const routing = defineRouting({
-	// A list of all locales that are supported
-	locales: ['en', 'ru', 'be', 'uk', 'de', 'fr', 'it', 'es', 'ar', 'zh', 'ja'],
-
 	// Used when no locale matches
 	defaultLocale: 'en',
+
+	// Will be merged with the defaults
+	localeCookie: {
+		// Expire in one year
+		maxAge: 60 * 60 * 24 * 365,
+		// Custom cookie name
+		name: 'USER_LOCALE',
+		// To be compliant out of the box, next-intl does not set the max-age value of the cookie, making it a session cookie that expires when a browser is closed.
+	},
+
+	// A list of all locales that are supported
+	locales: ['en', 'ru', 'be', 'uk', 'de', 'fr', 'it', 'es', 'ar', 'zh', 'ja'],
 
 	// The `pathnames` object holds pairs of internal and
 	// external paths. Based on the locale, the external
@@ -15,14 +24,5 @@ export const routing = defineRouting({
 		// external path can be used for all locales
 		'/': '/',
 		'/test': '/test',
-	},
-
-	// Will be merged with the defaults
-	localeCookie: {
-		// Custom cookie name
-		name: 'USER_LOCALE',
-		// Expire in one year
-		maxAge: 60 * 60 * 24 * 365,
-		// To be compliant out of the box, next-intl does not set the max-age value of the cookie, making it a session cookie that expires when a browser is closed.
 	},
 })

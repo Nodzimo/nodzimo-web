@@ -1,42 +1,42 @@
 {
-	"Metadata": {
-		"title": "Sefo Nodzimo",
-		"description": "„Vom Licht umarmt“"
-	},
-	"Header": {
-		"header": "Kopfbereich"
+	"ErrorPage": {
+		"errorDigest": "Fehlercode: ",
+		"errorMessage": "Fehlermeldung",
+		"errorStack": "Fehler-Stack",
+		"somethingWentWrong": "Etwas ist schiefgelaufen!",
+		"tryAgain": "Erneut versuchen"
 	},
 	"Footer": {
 		"footer": "Fußbereich"
 	},
+	"Header": {
+		"header": "Kopfbereich"
+	},
 	"IndexPage": {
-		"title": "Hallo, Welt!",
 		"description": "Es beginnt ganz klein,\nScheint kaum etwas zu sein,\nNur ein Keim, ein Staubkorn, ein Samen.\n\nDoch der Samen ist gesät,\nUnd ehe man sich versieht,\nIst er schon gewachsen.",
-		"testPageLink": "Testseite"
+		"testPageLink": "Testseite",
+		"title": "Hallo, Welt!"
 	},
 	"LocaleSwitcher": {
 		"label": "Sprache ändern",
 		"locale": "{locale, select, en {Englisch} ru {Russisch} be {Belarussisch} uk {Ukrainisch} de {Deutsch} fr {Französisch} it {Italienisch} es {Spanisch} ar {Arabisch} zh {Chinesisch} ja {Japanisch} other {Unbekannt}}"
 	},
-	"TestPage": {
-		"title": "Test",
-		"pangram": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern",
-		"alphabetUppercase": "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Ä Ö Ü ẞ",
-		"alphabetLowercase": "a b c d e f g h i j k l m n o p q r s t u v w x y z ä ö ü ß",
-		"indexPageLink": "Startseite",
-		"throwErrorButton": "Fehler auslösen",
-		"testError": "Testfehler"
+	"Metadata": {
+		"description": "„Vom Licht umarmt“",
+		"title": "Sefo Nodzimo"
 	},
 	"NotFound": {
-		"title": "404 - Seite nicht gefunden",
 		"description": "Die gesuchte Seite existiert nicht",
-		"returnHomeLink": "Zur Startseite zurückkehren"
+		"returnHomeLink": "Zur Startseite zurückkehren",
+		"title": "404 - Seite nicht gefunden"
 	},
-	"ErrorPage": {
-		"somethingWentWrong": "Etwas ist schiefgelaufen!",
-		"errorDigest": "Fehlercode: ",
-		"errorMessage": "Fehlermeldung",
-		"errorStack": "Fehler-Stack",
-		"tryAgain": "Erneut versuchen"
+	"TestPage": {
+		"alphabetLowercase": "a b c d e f g h i j k l m n o p q r s t u v w x y z ä ö ü ß",
+		"alphabetUppercase": "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Ä Ö Ü ẞ",
+		"indexPageLink": "Startseite",
+		"pangram": "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern",
+		"testError": "Testfehler",
+		"throwErrorButton": "Fehler auslösen",
+		"title": "Test"
 	}
 }

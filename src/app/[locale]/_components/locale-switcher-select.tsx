@@ -26,7 +26,7 @@ export function LocaleSwitcherSelect({ children, defaultValue, label }: Props) {
 				// @ts-expect-error -- TypeScript will validate that only known `params`
 				// are used in combination with a given `pathname`. Since the two will
 				// always match for the current route, we can skip runtime checks.
-				{ pathname, params },
+				{ params, pathname },
 				{ locale: nextLocale },
 			)
 		})

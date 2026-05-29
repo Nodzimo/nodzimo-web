@@ -14,19 +14,19 @@ type SitemapRoute = {
 
 const sitemapRoutes: readonly SitemapRoute[] = [
 	{
-		href: '/',
 		changeFrequency: 'daily',
+		href: '/',
 		priority: 1,
 	},
 	{
-		href: '/test',
 		changeFrequency: 'weekly',
+		href: '/test',
 		priority: 0.1,
 	},
 ]
 
 function getUrl(locale: Locale, href: Href) {
-	return host + getPathname({ locale, href })
+	return host + getPathname({ href, locale })
 }
 
 type LanguageAlternates = Record<Locale, string>
@@ -43,13 +43,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	return sitemapRoutes.map(
 		({ href, changeFrequency, priority }): SitemapEntry => {
 			return {
-				url: getUrl(routing.defaultLocale, href),
-				lastModified: new Date(),
-				changeFrequency,
-				priority,
 				alternates: {
 					languages: getLanguageAlternates(href),
 				},
+				changeFrequency,
+				lastModified: new Date(),
+				priority,
+				url: getUrl(routing.defaultLocale, href),
 			}
 		},
 	)

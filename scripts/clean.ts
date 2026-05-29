@@ -6,6 +6,14 @@ import { fileURLToPath } from 'node:url'
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 
 const cleanTargets = {
+	certs: {
+		label: 'generated certificates',
+		paths: ['certificates'],
+	},
+	modules: {
+		label: 'installed dependencies',
+		paths: ['node_modules'],
+	},
 	next: {
 		label: 'generated project artifacts',
 		paths: [
@@ -15,14 +23,6 @@ const cleanTargets = {
 			'messages/*.d.json.ts',
 			'dependency-graph.svg',
 		],
-	},
-	modules: {
-		label: 'installed dependencies',
-		paths: ['node_modules'],
-	},
-	certs: {
-		label: 'generated certificates',
-		paths: ['certificates'],
 	},
 } as const
 

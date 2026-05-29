@@ -1,42 +1,42 @@
 {
-	"Metadata": {
-		"title": "Сефо Нодзимо",
-		"description": "«Объятый Светом»"
-	},
-	"Header": {
-		"header": "Шапка"
+	"ErrorPage": {
+		"errorDigest": "Код ошибки: ",
+		"errorMessage": "Сообщение ошибки",
+		"errorStack": "Стек ошибки",
+		"somethingWentWrong": "Что-то пошло не так!",
+		"tryAgain": "Попробовать снова"
 	},
 	"Footer": {
 		"footer": "Подвал"
 	},
+	"Header": {
+		"header": "Шапка"
+	},
 	"IndexPage": {
-		"title": "Привет, Мир!",
 		"description": "Всё начинается с малого,\nБудто вовсе ничего:\nТолько искра, пылинка, зерно.\n\nНо однажды посеян росток,\nИ проходит лишь краткий срок —\nКак он тянется вверх всё равно.",
-		"testPageLink": "Тестовая страница"
+		"testPageLink": "Тестовая страница",
+		"title": "Привет, Мир!"
 	},
 	"LocaleSwitcher": {
 		"label": "Изменить язык",
 		"locale": "{locale, select, en {Английский} ru {Русский} be {Белорусский} uk {Украинский} de {Немецкий} fr {Французский} it {Итальянский} es {Испанский} ar {Арабский} zh {Китайский} ja {Японский} other {Неизвестно}}"
 	},
-	"TestPage": {
-		"title": "Тест",
-		"pangram": "Съешь же ещё этих мягких французских булок да выпей чаю",
-		"alphabetUppercase": "А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я",
-		"alphabetLowercase": "а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я",
-		"indexPageLink": "Главная страница",
-		"throwErrorButton": "Вызвать ошибку",
-		"testError": "Отладочная ошибка"
+	"Metadata": {
+		"description": "«Объятый Светом»",
+		"title": "Сефо Нодзимо"
 	},
 	"NotFound": {
-		"title": "404 - Страница не найдена",
 		"description": "Запрошенная страница не существует",
-		"returnHomeLink": "Вернуться на главную"
+		"returnHomeLink": "Вернуться на главную",
+		"title": "404 - Страница не найдена"
 	},
-	"ErrorPage": {
-		"somethingWentWrong": "Что-то пошло не так!",
-		"errorDigest": "Код ошибки: ",
-		"errorMessage": "Сообщение ошибки",
-		"errorStack": "Стек ошибки",
-		"tryAgain": "Попробовать снова"
+	"TestPage": {
+		"alphabetLowercase": "а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я",
+		"alphabetUppercase": "А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я",
+		"indexPageLink": "Главная страница",
+		"pangram": "Съешь же ещё этих мягких французских булок да выпей чаю",
+		"testError": "Отладочная ошибка",
+		"throwErrorButton": "Вызвать ошибку",
+		"title": "Тест"
 	}
 }

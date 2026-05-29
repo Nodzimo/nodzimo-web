@@ -1,42 +1,42 @@
 {
-	"Metadata": {
-		"title": "Sefo Nodzimo",
-		"description": "« Enveloppé de lumière »"
-	},
-	"Header": {
-		"header": "En-tête"
+	"ErrorPage": {
+		"errorDigest": "Code d'erreur : ",
+		"errorMessage": "Message d'erreur",
+		"errorStack": "Pile d'erreur",
+		"somethingWentWrong": "Une erreur est survenue !",
+		"tryAgain": "Réessayer"
 	},
 	"Footer": {
 		"footer": "Pied de page"
 	},
+	"Header": {
+		"header": "En-tête"
+	},
 	"IndexPage": {
-		"title": "Bonjour, le monde !",
 		"description": "Tout commence tout petit,\nPresque comme si de rien n'était,\nUn germe, une poussière, une graine.\n\nMais la graine a été semée,\nEt avant même qu'on s'en aperçoive,\nElle a déjà grandi.",
-		"testPageLink": "Page de test"
+		"testPageLink": "Page de test",
+		"title": "Bonjour, le monde !"
 	},
 	"LocaleSwitcher": {
 		"label": "Changer de langue",
 		"locale": "{locale, select, en {Anglais} ru {Russe} be {Biélorusse} uk {Ukrainien} de {Allemand} fr {Français} it {Italien} es {Espagnol} ar {Arabe} zh {Chinois} ja {Japonais} other {Inconnu}}"
 	},
-	"TestPage": {
-		"title": "Test",
-		"pangram": "Portez ce vieux whisky au juge blond qui fume",
-		"alphabetUppercase": "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z À Â Ç É È Ê Ë Î Ï Ô Ù Û Ü Ÿ",
-		"alphabetLowercase": "a b c d e f g h i j k l m n o p q r s t u v w x y z à â ç é è ê ë î ï ô ù û ü ÿ",
-		"indexPageLink": "Page d'accueil",
-		"throwErrorButton": "Déclencher une erreur",
-		"testError": "Erreur de test"
+	"Metadata": {
+		"description": "« Enveloppé de lumière »",
+		"title": "Sefo Nodzimo"
 	},
 	"NotFound": {
-		"title": "404 - Page introuvable",
 		"description": "La page que vous recherchez n'existe pas",
-		"returnHomeLink": "Retourner à l'accueil"
+		"returnHomeLink": "Retourner à l'accueil",
+		"title": "404 - Page introuvable"
 	},
-	"ErrorPage": {
-		"somethingWentWrong": "Une erreur est survenue !",
-		"errorDigest": "Code d'erreur : ",
-		"errorMessage": "Message d'erreur",
-		"errorStack": "Pile d'erreur",
-		"tryAgain": "Réessayer"
+	"TestPage": {
+		"alphabetLowercase": "a b c d e f g h i j k l m n o p q r s t u v w x y z à â ç é è ê ë î ï ô ù û ü ÿ",
+		"alphabetUppercase": "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z À Â Ç É È Ê Ë Î Ï Ô Ù Û Ü Ÿ",
+		"indexPageLink": "Page d'accueil",
+		"pangram": "Portez ce vieux whisky au juge blond qui fume",
+		"testError": "Erreur de test",
+		"throwErrorButton": "Déclencher une erreur",
+		"title": "Test"
 	}
 }
