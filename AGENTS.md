@@ -71,6 +71,13 @@ the relevant guide in `node_modules/next/dist/docs/` before writing any code. He
   concise.
 - Do not add broad abstractions just to reduce line count. Extract code when it creates a clear route-local component,
   provider wrapper, or shared helper.
+- Keep implementation code direct and readable. Prefer named local constants over dense chains when a chain mixes data
+  preparation, sorting, and rendering.
+- Separate multiline declarations from neighboring declarations with blank lines when they would otherwise stick to
+  single-line constants, functions, or other visual blocks. Closely related one-line constants may stay grouped.
+- Use `UPPER_SNAKE_CASE` for intentional module-scope immutable tables, mappings, defaults, and finite option lists.
+- Use `as const` for literal option arrays and mapping objects when the project derives a union type from their values
+  or keys.
 
 ## WebStorm Project Settings
 
@@ -94,6 +101,12 @@ the relevant guide in `node_modules/next/dist/docs/` before writing any code. He
 - For choosing or debugging Next rendering modes, RSC/SSR/client boundaries, route static/dynamic behavior, Suspense
   streaming, or build failures involving `createContext`, hooks, or third-party packages, use the project-local
   `next-rendering-diagnostics` skill at `.codex/skills/next-rendering-diagnostics`.
+- For formatting long Tailwind class strings into readable grouped chunks without changing the styles, use the
+  project-local `tailwind-class-formatter` skill at `.codex/skills/tailwind-class-formatter`.
+- For final project convention review and safe fixes beyond Biome, including JSX literal braces, rest-prop naming,
+  type-vs-interface choices, literal table typing, module constant naming, file extension/import/export style checks,
+  readable declaration spacing, and orchestration of Tailwind class formatting, use the project-local
+  `code-style-reviewer` skill at `.codex/skills/code-style-reviewer`.
 - Keep supported locale order consistent across routing, selectors, and message select cases: `en`, `ru`, `be`, `uk`,
   `de`, `fr`, `it`, `es`, `ar`, `zh`, `ja`.
 

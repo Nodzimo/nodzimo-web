@@ -1,0 +1,7 @@
+interface:
+  display_name: "Tailwind Class Formatter"
+  short_description: "Group long Tailwind class lists."
+  default_prompt: "Use $tailwind-class-formatter to format long Tailwind class lists into readable grouped chunks without changing, adding, or removing any class tokens."
+
+policy:
+  allow_implicit_invocation: true

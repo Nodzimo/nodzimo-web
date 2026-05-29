@@ -1,0 +1,7 @@
+interface:
+  display_name: "Code Style Reviewer"
+  short_description: "Review project code-style conventions."
+  default_prompt: "Use $code-style-reviewer to review the current project changes for code-style conventions that Biome, TypeScript, and Next.js do not fully enforce, then apply safe fixes and report any semantic decisions."
+
+policy:
+  allow_implicit_invocation: true
