@@ -63,6 +63,9 @@ Start by deciding which mode applies:
     - Say whether the existing dependency diff is reasonable to commit.
     - Name required local code/config changes, if any.
     - Recommend checks to run before commit or production readiness.
+    - For Biome updates, verify whether `biome.json`/`biome.jsonc` changed with the dependency update. If it did not,
+      run the local migration script when available, or recommend `biome migrate --write` before treating the update as
+      complete.
 
 ## Shared Research Workflow
 
@@ -149,6 +152,11 @@ Sources: ...
 
 This repository uses Bun, Next.js App Router, React, TypeScript strict mode, Tailwind CSS, Biome, Dependency Cruiser,
 and next-intl. Read root `AGENTS.md` before interpreting framework, i18n, lint, or IDE-setting changes.
+
+When `@biomejs/biome` is updated, treat `biome.json` as part of the dependency update surface, even for patch updates.
+Check that the `$schema` version matches the installed Biome version when the schema URL is versioned. Prefer the local
+project script `bun run biome:migrate` when present; otherwise use `biome migrate --write`. Do not recommend `bunx` for
+this project when `@biomejs/biome` is already installed locally.
 
 Keep the skill portable: put reusable workflow rules here, and keep this repo's current dependency source map in
 `references/dependency-sources.md`.
