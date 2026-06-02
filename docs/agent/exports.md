@@ -5,3 +5,4 @@
 - Use named exports for ordinary components, utilities, constants, and route-local helpers.
 - Prefer `export function ComponentName()` for normal React components.
 - Barrel files should re-export named symbols, e.g. `export { Header } from './header'`.
+- Detailed export style conventions live in [Code Style Conventions](code-style-conventions.md).

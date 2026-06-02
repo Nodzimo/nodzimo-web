@@ -14,3 +14,4 @@
 - Use `UPPER_SNAKE_CASE` for intentional module-scope immutable tables, mappings, defaults, and finite option lists.
 - Use `as const` for literal option arrays and mapping objects when the project derives a union type from their values
   or keys.
+- Detailed code-style conventions live in [Code Style Conventions](code-style-conventions.md).

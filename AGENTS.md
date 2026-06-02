@@ -31,6 +31,13 @@ discussion and concise committed code.
 
 See [docs/agent/collaboration.md](docs/agent/collaboration.md).
 
+## Code Style Conventions
+
+Code-style review should preserve local readability conventions around JSX literals, rest names, literal tables, file
+extensions, imports, exports, declaration spacing, and text/quote boundaries.
+
+See [docs/agent/code-style-conventions.md](docs/agent/code-style-conventions.md).
+
 ## WebStorm Project Settings
 
 Shared WebStorm settings are intentionally narrow and should use scoped inspection exclusions instead of broad IDE
