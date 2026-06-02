@@ -1,0 +1,18 @@
+# Skills
+
+- For next-intl message translation, synchronization, or validation, use the project-local `next-intl-localizer` skill
+  at `.codex/skills/next-intl-localizer`.
+- For pre-update dependency research from `bun outdated`, post-update changelog review, breaking-change triage, or
+  deciding whether upgraded packages need local code/config changes, use the project-local
+  `dependency-update-reviewer` skill at `.codex/skills/dependency-update-reviewer`.
+- For choosing or debugging Next rendering modes, RSC/SSR/client boundaries, route static/dynamic behavior, Suspense
+  streaming, or build failures involving `createContext`, hooks, or third-party packages, use the project-local
+  `next-rendering-diagnostics` skill at `.codex/skills/next-rendering-diagnostics`.
+- For formatting long Tailwind class strings into readable grouped chunks without changing the styles, use the
+  project-local `tailwind-class-formatter` skill at `.codex/skills/tailwind-class-formatter`.
+- For final project convention review and safe fixes beyond Biome, including JSX literal braces, rest-prop naming,
+  type-vs-interface choices, literal table typing, module constant naming, file extension/import/export style checks,
+  readable declaration spacing, and orchestration of Tailwind class formatting, use the project-local
+  `code-style-reviewer` skill at `.codex/skills/code-style-reviewer`.
+- Keep supported locale order consistent across routing, selectors, and message select cases: `en`, `ru`, `be`, `uk`,
+  `de`, `fr`, `it`, `es`, `ar`, `zh`, `ja`.
