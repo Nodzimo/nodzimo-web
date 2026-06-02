@@ -38,6 +38,13 @@ suppressions.
 
 See [docs/agent/webstorm-project-settings.md](docs/agent/webstorm-project-settings.md).
 
+## Repository Text Format
+
+Repository text normalization is controlled through `.gitattributes`, including LF defaults and CRLF Windows command
+files.
+
+See [docs/agent/repository-text-format.md](docs/agent/repository-text-format.md).
+
 ## Skills
 
 Use the project-local skills for next-intl localization, dependency review, Next rendering diagnostics, Tailwind class

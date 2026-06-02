@@ -70,7 +70,7 @@
 		"type:gen": "next typegen",
 		"ui-kit:add": "bun install ../nodzimo-ui/nodzimo-ui.tgz",
 		"ui-kit:link": "bun link nodzimo-ui",
-		"ui-kit:reinstall": "bun run ui:remove && bun run ui:add",
+		"ui-kit:reinstall": "bun run ui-kit:remove && bun run ui-kit:add",
 		"ui-kit:remove": "bun remove nodzimo-ui"
 	},
 	"trustedDependencies": [

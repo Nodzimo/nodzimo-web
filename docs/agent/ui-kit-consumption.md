@@ -10,11 +10,11 @@
 - Local UI-kit development still uses the sibling `../nodzimo-ui` project when testing unpublished changes. Build and
   pack the UI kit there, then install the generated tarball here through the existing app scripts.
 - Preferred local unpublished-change workflow: run `bun run lib:pack` in `../nodzimo-ui`, then run
-  `bun run ui:reinstall`
+  `bun run ui-kit:reinstall`
   in this project. This temporarily changes the installed package source to the generated local `.tgz`; switch back to
   npm with `bun add @sefo/nodzimo-ui@<version>` or `bun update @sefo/nodzimo-ui` before treating the app as
   production-ready.
-- Avoid `bun run ui:link`, `bun link nodzimo-ui`, and `bun link @sefo/nodzimo-ui` for Next/Turbopack.
+- Avoid `bun run ui-kit:link`, `bun link nodzimo-ui`, and `bun link @sefo/nodzimo-ui` for Next/Turbopack.
   Linked/junction packages can fail Turbopack resolution even when Node, Bun, and the IDE resolve them correctly.
   Related upstream issues:
     - https://github.com/vercel/next.js/issues/85057
