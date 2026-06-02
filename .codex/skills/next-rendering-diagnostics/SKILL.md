@@ -10,26 +10,15 @@ description: Diagnose and guide Next.js 16 App Router rendering behavior in nodz
 Use this skill for this Next 16 consumer app when a task touches rendering mode, App Router boundaries, static/dynamic
 behavior, third-party package imports, or confusing build errors.
 
-Before changing behavior, read the relevant installed Next docs in `node_modules/next/dist/docs/`. For the detailed
-local model and checklist, read `references/rendering-model.md`.
+This skill is a diagnostic workflow. It should not replace the project rendering rules. Before changing behavior, read:
 
-## Quick Model
+- `docs/agent/next-rendering-model.md`
+- `docs/agent/next-intl-and-static-rendering.md` when localized routes, metadata, sitemap, loading, or not-found files
+  are involved
+- the relevant installed Next docs in `node_modules/next/dist/docs/`
+- `references/rendering-model.md` when the task needs a detailed local model or boundary-debugging checklist
 
-- Server Components are the default for pages/layouts. Prefer them for static shell, metadata, locale setup, server
-  data, secrets, and less client JavaScript.
-- RSC is the server component graph/payload layer: it decides what runs only on the server, what is serialized to client
-  islands, and what JavaScript can be omitted from the browser bundle.
-- SSR is the HTML render pass: it turns the RSC payload plus Client Component references into initial HTML for first
-  load, SSG output, or request-time responses.
-- In App Router, RSC and SSR usually cooperate. RSC is not "SSR replacement" and SSR is not a license to import
-  SSR-safe packages into the RSC graph.
-- RSC is stricter than SSR. RSC cannot use context APIs, state/effect hooks, event handlers, or browser APIs.
-- Client Components begin at `'use client'`. Use them for interactivity, browser APIs, state/effects, and unsafe
-  third-party widgets. Keep the boundary deep and narrow.
-- Static/SSG is the preferred baseline for current localized content routes. Dynamic rendering is a deliberate choice
-  for
-  request-time data.
-- A Server Component can render a Client Component without making the whole route dynamic.
+Keep the skill body focused on the steps to take. Keep durable rendering concepts in agent docs and the reference.
 
 ## Workflow
 
