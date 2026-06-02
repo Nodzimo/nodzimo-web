@@ -92,7 +92,7 @@ remove, rename, or "fix" classes.
 5. For type/interface decisions, fix only obvious mismatches; otherwise report the candidate with the tradeoff.
 6. Leave raw SVG, raw HTML, MDX, CSS, and generated output alone unless the task explicitly targets those files.
 7. Run the smallest relevant verification:
-    - `bunx biome check <changed-files>` for style-only changes.
+    - `bun run check:lint` or `bunx biome check <changed-files>` for style-only changes.
     - `bun run type:check` after TypeScript type-shape, route, component, or exported type changes.
     - Tailwind class-token comparison when class-list formatting changed.
 8. Summarize changed conventions and any review-only findings.
