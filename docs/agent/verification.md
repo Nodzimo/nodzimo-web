@@ -4,6 +4,8 @@
   i18n validation, Dependency Cruiser checks, and outdated dependency reporting.
 - Use `bun run project:verify` before treating changes as production-ready. It refreshes dependencies with
   `bun install`, runs `project:audit`, then runs the production build.
+- For GitHub Release workflow changes, validate with a single test version tag when needed and clean up experimental
+  tags/releases explicitly. See [GitHub Releases](github-releases.md).
 - Prefer `bun run type:check` for route type and TypeScript validation.
 - Prefer `bun run check:lint` for lint/style validation.
 - Use `bun run check:deps` for Dependency Cruiser validation. Use `bun run check:deps-graph` only when intentionally

@@ -126,6 +126,13 @@ ports.
 
 See [docs/agent/cleanup-scripts.md](docs/agent/cleanup-scripts.md).
 
+## GitHub Releases
+
+GitHub Releases are automated from pushed version tags through a minimal GitHub Actions workflow, while deployment
+remains a separate site-hosting concern.
+
+See [docs/agent/github-releases.md](docs/agent/github-releases.md).
+
 ## Verification
 
 Use the smallest relevant verification command, escalating to project audit, production build, or full verify when
