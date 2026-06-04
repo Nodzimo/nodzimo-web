@@ -10,14 +10,15 @@ the relevant guide in `node_modules/next/dist/docs/` before writing any code. He
 
 ## Stack
 
-This project is a Bun-based Next.js 16 App Router consumer of `@sefo/nodzimo-ui`, with React 19, TypeScript strict mode,
+This project is a Bun-based Next.js 16 App Router consumer of `@nodzimo/nodzimo-ui`, with React 19, TypeScript strict
+mode,
 Tailwind CSS 4, Biome, and next-intl.
 
 See [docs/agent/stack.md](docs/agent/stack.md).
 
 ## UI Kit Consumption
 
-`@sefo/nodzimo-ui` is consumed from the public package surface for production and through packed sibling-project
+`@nodzimo/nodzimo-ui` is consumed from the public package surface for production and through packed sibling-project
 tarballs for local unpublished UI-kit testing.
 
 See [docs/agent/ui-kit-consumption.md](docs/agent/ui-kit-consumption.md).

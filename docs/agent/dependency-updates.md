@@ -7,7 +7,7 @@
 - For post-update review, inspect `package.json`, `bun.lock`, and any touched config or generated files.
 - For framework/tooling updates, check app code and project tooling even when the package has few direct imports:
   `src`, `scripts`, config files, `messages`, `.codex`, and `.idea` only when relevant.
-- For `@sefo/nodzimo-ui`, review public package usage only: `.`, `./client`, and `./styles.css`. Do not deep-import
+- For `@nodzimo/nodzimo-ui`, review public package usage only: `.`, `./client`, and `./styles.css`. Do not deep-import
   internals from `src`, `dist`, or other package-private paths.
 - For Next updates, read the installed docs under `node_modules/next/dist/docs/` before changing rendering, routing,
   metadata, Turbopack, or App Router behavior.

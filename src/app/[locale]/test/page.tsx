@@ -1,5 +1,5 @@
-import { Card } from '@sefo/nodzimo-ui'
-import { Button } from '@sefo/nodzimo-ui/client'
+import { Card } from '@nodzimo/nodzimo-ui'
+import { Button } from '@nodzimo/nodzimo-ui/client'
 import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import { Link, useStaticLocale } from '@/i18n'

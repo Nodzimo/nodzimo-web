@@ -1,6 +1,6 @@
 {
 	"dependencies": {
-		"@sefo/nodzimo-ui": "0.0.10",
+		"@nodzimo/nodzimo-ui": "0.0.10",
 		"clsx": "2.1.1",
 		"next": "16.2.7",
 		"next-intl": "4.13.0",
@@ -72,9 +72,9 @@
 		"type:check": "bun run type:gen && tsc --noEmit",
 		"type:gen": "next typegen",
 		"ui-kit:add": "bun install ../nodzimo-ui/nodzimo-ui.tgz",
-		"ui-kit:link": "bun link nodzimo-ui",
+		"ui-kit:link": "bun link @nodzimo/nodzimo-ui",
 		"ui-kit:reinstall": "bun run ui-kit:remove && bun run ui-kit:add",
-		"ui-kit:remove": "bun remove nodzimo-ui"
+		"ui-kit:remove": "bun remove @nodzimo/nodzimo-ui"
 	},
 	"trustedDependencies": [
 		"sharp",

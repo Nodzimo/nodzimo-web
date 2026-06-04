@@ -25,7 +25,7 @@ Keep the skill body focused on the steps to take. Keep durable rendering concept
 1. Identify the route and boundary.
     - Is the file a page/layout/loading/not-found/error/template or a normal component?
     - Is it inside `src/app/[locale]`, root `src/app`, or a client component tree?
-    - Does it import from `@sefo/nodzimo-ui` or `@sefo/nodzimo-ui/client` correctly?
+    - Does it import from `@nodzimo/nodzimo-ui` or `@nodzimo/nodzimo-ui/client` correctly?
 
 2. Classify the need.
     - Static content, locale setup, metadata, server data, or secrets: prefer Server Component and SSG/cache.
