@@ -9,7 +9,7 @@
 
 ## Workflow Contract
 
-- The release workflow is `.github/workflows/create-release.yml`.
+- The release workflow is `.github/workflows/release.yml`.
 - It runs only when a tag matching `v*.*.*` is pushed.
 - The workflow intentionally does not check out the repository. Release creation is an API operation and the command
   passes the repository explicitly with `--repo`.
@@ -17,7 +17,7 @@
   outputs.
 
 ```yaml
-name: Create Release
+name: Release
 
 on:
   push:
