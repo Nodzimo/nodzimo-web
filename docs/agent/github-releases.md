@@ -9,7 +9,7 @@
 
 ## Workflow Contract
 
-- The release workflow is `.github/workflows/release.yml`.
+- The release workflow is `.github/workflows/create-release.yml`.
 - It runs only when a tag matching `v*.*.*` is pushed.
 - The workflow intentionally does not check out the repository. Release creation is an API operation and the command
   passes the repository explicitly with `--repo`.
@@ -17,7 +17,7 @@
   outputs.
 
 ```yaml
-name: Release
+name: Create Release
 
 on:
   push:
@@ -28,12 +28,12 @@ permissions:
   contents: write
 
 jobs:
-  release:
+  create-release:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - name: Create GitHub release
+      - name: Create release
         run: gh release create ${{ github.ref_name }} --repo ${{ github.repository }} --generate-notes
 ```
 
@@ -52,8 +52,9 @@ jobs:
 
 ## Release Commands
 
-- `bun run release:bump` runs `npm version patch`. In a git repository, npm updates `package.json`, creates a version
-  commit, and creates a version tag such as `v0.0.2`.
+- `bun run release:patch` runs `bun pm version patch`. In a git repository, Bun updates `package.json`, creates a
+  version commit, and creates a version tag such as `v0.0.2`.
+- `bun run release:version` prints the current package version through `bun pm version`.
 - `bun run release:push` runs `git push --follow-tags`. It pushes the branch update and any missing annotated tags
   reachable from the pushed commits.
 - Prefer `git push --follow-tags` over `git push --tags` for regular releases because `--tags` pushes every local tag,
@@ -65,7 +66,7 @@ jobs:
 Regular manual flow:
 
 ```powershell
-bun run release:bump
+bun run release:patch
 bun run release:push
 ```
 
