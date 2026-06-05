@@ -1,9 +1,12 @@
 # Sefo Nodzimo Web
 
-AI-ready engineering workspace for a documented web project
+AI-ready engineering workspace for a modern multilingual Next.js website.
+
+Includes local project documentation for IDE and agent workflows.
 
 ## Project Atlas
 
 - Website: [Nodzimo.com](https://Nodzimo.com)
 - Repository: [github.com/Nodzimo/web](https://github.com/Nodzimo/web)
+- License: [MIT](LICENSE)
 - [Agent Operating Charter](AGENTS.md)
