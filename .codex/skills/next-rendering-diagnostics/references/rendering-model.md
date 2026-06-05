@@ -198,13 +198,13 @@ failures:
 1. Reproduce with `bun run build`.
 2. Identify the route named in the build error.
 3. Inspect the route's imports and route-local barrels.
-4. Check whether imports come from `@nodzimo/nodzimo-ui` vs `@nodzimo/nodzimo-ui/client`.
+4. Check whether imports come from `@nodzimo/ui` vs `@nodzimo/ui/client`.
 5. Inspect third-party package boundaries. A package that uses context/hooks may need a local Client Component wrapper
    or a different import entrypoint.
 6. Search built server chunks when the source chain is unclear:
 
 ```powershell
-rg -n "createContext|useContext|useState|useEffect|@nodzimo/nodzimo-ui|lucide-react|@base-ui" .next\server\chunks .next\server\app
+rg -n "createContext|useContext|useState|useEffect|@nodzimo/ui|lucide-react|@base-ui" .next\server\chunks .next\server\app
 ```
 
 Interpretation:

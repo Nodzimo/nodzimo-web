@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react'
-import '@nodzimo/nodzimo-ui/styles.css'
+import '@nodzimo/ui/styles.css'
 import './globals.css'
 
 // Since we have a root `not-found.tsx` page, a layout file

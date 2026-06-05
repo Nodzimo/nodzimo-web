@@ -1,6 +1,6 @@
 {
 	"dependencies": {
-		"@nodzimo/nodzimo-ui": "0.0.10",
+		"@nodzimo/ui": "0.0.11",
 		"clsx": "2.1.1",
 		"next": "16.2.7",
 		"next-intl": "4.13.0",
@@ -28,7 +28,7 @@
 		"sharp",
 		"unrs-resolver"
 	],
-	"name": "nodzimo-web",
+	"name": "web",
 	"private": true,
 	"scripts": {
 		"analyze": "next experimental-analyze",
@@ -73,10 +73,10 @@
 		"start:preview": "bun run build && bun run start --port 3300",
 		"type:check": "bun run type:gen && tsc --noEmit",
 		"type:gen": "next typegen",
-		"ui-kit:add": "bun install ../nodzimo-ui/nodzimo-ui.tgz",
-		"ui-kit:link": "bun link @nodzimo/nodzimo-ui",
+		"ui-kit:add": "bun install ../ui/ui.tgz",
+		"ui-kit:link": "bun link @nodzimo/ui",
 		"ui-kit:reinstall": "bun run ui-kit:remove && bun run ui-kit:add",
-		"ui-kit:remove": "bun remove @nodzimo/nodzimo-ui"
+		"ui-kit:remove": "bun remove @nodzimo/ui"
 	},
 	"trustedDependencies": [
 		"sharp",

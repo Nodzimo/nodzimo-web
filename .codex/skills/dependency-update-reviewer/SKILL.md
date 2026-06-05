@@ -16,7 +16,7 @@ This skill is a review workflow. Before making project-specific recommendations,
 - `docs/agent/dependency-updates.md`
 - `docs/agent/verification.md`
 - `docs/agent/biome-policy.md` when Biome is involved
-- `docs/agent/ui-kit-consumption.md` when `@nodzimo/nodzimo-ui` is involved
+- `docs/agent/ui-kit-consumption.md` when `@nodzimo/ui` is involved
 - `references/dependency-sources.md` for the current upstream source map and local review focus
 
 Do not edit project files unless the user explicitly asks for implementation. A review request should end with a report,

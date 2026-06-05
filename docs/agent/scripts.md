@@ -65,7 +65,7 @@
 
 ## Local UI-Kit Scripts
 
-- `bun run ui-kit:add` installs the sibling UI-kit tarball from `../nodzimo-ui/nodzimo-ui.tgz`.
+- `bun run ui-kit:add` installs the sibling UI-kit tarball from `../ui/ui.tgz`.
 - `bun run ui-kit:remove` removes the installed UI-kit package.
 - `bun run ui-kit:reinstall` removes and reinstall the sibling UI-kit tarball.
 - `bun run ui-kit:link` links the UI kit through Bun. Prefer published package or tarball testing for Next/Turbopack;

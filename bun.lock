@@ -3,9 +3,9 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "nodzimo-web",
+      "name": "web",
       "dependencies": {
-        "@nodzimo/nodzimo-ui": "0.0.10",
+        "@nodzimo/ui": "0.0.11",
         "clsx": "2.1.1",
         "next": "16.2.7",
         "next-intl": "4.13.0",
@@ -205,7 +205,7 @@
 
     "@nodelib/fs.walk": ["@nodelib/fs.walk@1.2.8", "", { "dependencies": { "@nodelib/fs.scandir": "2.1.5", "fastq": "^1.6.0" } }, "sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg=="],
 
-    "@nodzimo/nodzimo-ui": ["@nodzimo/nodzimo-ui@0.0.10", "", { "dependencies": { "@base-ui/react": "1.5.0", "class-variance-authority": "0.7.1", "clsx": "2.1.1", "tailwind-merge": "3.6.0" }, "peerDependencies": { "react": "19.x", "react-dom": "19.x" } }, "sha512-LtukFWmP5a14z9hCCNs26eMhnwh4DIONSBDefNR2GdgK+8K1W4EY1DmZATmJW0lOjw8/KbnVV5/LR+Bo4H19dg=="],
+    "@nodzimo/ui": ["@nodzimo/ui@0.0.11", "", { "dependencies": { "@base-ui/react": "1.5.0", "class-variance-authority": "0.7.1", "clsx": "2.1.1", "tailwind-merge": "3.6.0" }, "peerDependencies": { "react": "19.x", "react-dom": "19.x" } }, "sha512-6wTR4vM/STjx309mBg/2YRlpZVDkLObKunNX15lqQCwNuPreYG7AvEBlYWjeMwoRCa6eh7JhKy/Ma/GTJFWQRA=="],
 
     "@parcel/watcher": ["@parcel/watcher@2.5.6", "", { "dependencies": { "detect-libc": "^2.0.3", "is-glob": "^4.0.3", "node-addon-api": "^7.0.0", "picomatch": "^4.0.3" }, "optionalDependencies": { "@parcel/watcher-android-arm64": "2.5.6", "@parcel/watcher-darwin-arm64": "2.5.6", "@parcel/watcher-darwin-x64": "2.5.6", "@parcel/watcher-freebsd-x64": "2.5.6", "@parcel/watcher-linux-arm-glibc": "2.5.6", "@parcel/watcher-linux-arm-musl": "2.5.6", "@parcel/watcher-linux-arm64-glibc": "2.5.6", "@parcel/watcher-linux-arm64-musl": "2.5.6", "@parcel/watcher-linux-x64-glibc": "2.5.6", "@parcel/watcher-linux-x64-musl": "2.5.6", "@parcel/watcher-win32-arm64": "2.5.6", "@parcel/watcher-win32-ia32": "2.5.6", "@parcel/watcher-win32-x64": "2.5.6" } }, "sha512-tmmZ3lQxAe/k/+rNnXQRawJ4NjxO2hqiOLTHvWchtGZULp4RyFeh6aU4XdOYBFe2KE1oShQTv4AblOs2iOrNnQ=="],
 
