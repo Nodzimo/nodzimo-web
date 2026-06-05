@@ -13,7 +13,8 @@ groups.
 
 This is a formatting and grouping skill only. It must preserve the exact style contract.
 
-Before editing, read `docs/agent/styling.md` for project styling conventions and `docs/agent/biome-policy.md` for the
+Before editing, read `docs/agent-operating-charter/styling.md` for project styling conventions and
+`docs/agent-operating-charter/biome-policy.md` for the
 local Biome/Tailwind sorting policy.
 
 ## Non-Negotiable Safety Contract

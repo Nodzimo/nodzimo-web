@@ -13,10 +13,10 @@ update, or needs action.
 
 This skill is a review workflow. Before making project-specific recommendations, read:
 
-- `docs/agent/dependency-updates.md`
-- `docs/agent/verification.md`
-- `docs/agent/biome-policy.md` when Biome is involved
-- `docs/agent/ui-kit-consumption.md` when `@nodzimo/ui` is involved
+- `docs/agent-operating-charter/dependency-updates.md`
+- `docs/agent-operating-charter/verification.md`
+- `docs/agent-operating-charter/biome-policy.md` when Biome is involved
+- `docs/agent-operating-charter/ui-kit-consumption.md` when `@nodzimo/ui` is involved
 - `references/dependency-sources.md` for the current upstream source map and local review focus
 
 Do not edit project files unless the user explicitly asks for implementation. A review request should end with a report,
@@ -158,5 +158,6 @@ Sources: ...
 
 ## Project-Specific Notes
 
-Keep reusable dependency-review workflow rules in this skill. Keep project policy in `docs/agent/dependency-updates.md`
+Keep reusable dependency-review workflow rules in this skill. Keep project policy in
+`docs/agent-operating-charter/dependency-updates.md`
 and the current dependency source map in `references/dependency-sources.md`.

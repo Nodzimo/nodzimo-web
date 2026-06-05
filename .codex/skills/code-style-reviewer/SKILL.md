@@ -15,10 +15,10 @@ decisions instead of rewriting code by taste.
 
 Before reviewing, read:
 
-- `docs/agent/code-style-conventions.md`
-- `docs/agent/biome-policy.md`
-- `docs/agent/styling.md` when Tailwind class naming or WebStorm class detection is involved
-- `docs/agent/exports.md` when export style is involved
+- `docs/agent-operating-charter/code-style-conventions.md`
+- `docs/agent-operating-charter/biome-policy.md`
+- `docs/agent-operating-charter/styling.md` when Tailwind class naming or WebStorm class detection is involved
+- `docs/agent-operating-charter/exports.md` when export style is involved
 
 ## Scope Boundaries
 

@@ -11,8 +11,9 @@ Use this skill for the local `next-intl` message workflow in this repo.
 
 This skill is a localization workflow. Before translating or reviewing messages, read:
 
-- `docs/agent/next-intl-localization.md`
-- `docs/agent/next-intl-and-static-rendering.md` when routing, locale lists, metadata, sitemap, loading, or not-found
+- `docs/agent-operating-charter/next-intl-localization.md`
+- `docs/agent-operating-charter/next-intl-and-static-rendering.md` when routing, locale lists, metadata, sitemap,
+  loading, or not-found
   behavior changes
 - `references/translation-style.md` before translating or reviewing wording
 
@@ -26,11 +27,11 @@ the reference.
 3. Translate only missing or intentionally changed values unless the user asks for a full review.
 4. Preserve JSON object structure and nearby formatting.
 5. Preserve ICU expressions, brand names, route slugs, component names, CSS classes, env names, file paths, and
-   technical identifiers according to `docs/agent/next-intl-localization.md`.
+   technical identifiers according to `docs/agent-operating-charter/next-intl-localization.md`.
 6. After edits, run the smallest useful validation:
     - `bun .codex/skills/next-intl-localizer/scripts/check-locales.ts`
     - `bun run i18n:check` when project dependencies are available
-7. If routing or locale lists are changed, also follow `docs/agent/next-intl-and-static-rendering.md`.
+7. If routing or locale lists are changed, also follow `docs/agent-operating-charter/next-intl-and-static-rendering.md`.
 
 ## Expected User Prompts
 

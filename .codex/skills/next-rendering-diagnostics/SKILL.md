@@ -12,8 +12,9 @@ behavior, third-party package imports, or confusing build errors.
 
 This skill is a diagnostic workflow. It should not replace the project rendering rules. Before changing behavior, read:
 
-- `docs/agent/next-rendering-model.md`
-- `docs/agent/next-intl-and-static-rendering.md` when localized routes, metadata, sitemap, loading, or not-found files
+- `docs/agent-operating-charter/next-rendering-model.md`
+- `docs/agent-operating-charter/next-intl-and-static-rendering.md` when localized routes, metadata, sitemap, loading, or
+  not-found files
   are involved
 - the relevant installed Next docs in `node_modules/next/dist/docs/`
 - `references/rendering-model.md` when the task needs a detailed local model or boundary-debugging checklist
